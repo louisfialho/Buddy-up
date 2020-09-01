@@ -10,9 +10,10 @@ require 'faker'
 
 
 puts "Cleaning database..."
+
 User.destroy_all
-# Event.destroy_all
-# Booking.destroy_all
+Event.destroy_all
+Booking.destroy_all
 
 
 puts "Creating users..."
@@ -29,8 +30,11 @@ end
 
 puts "Creating events..."
 
+
 50.times do
-event = Event.new(sport: sports.sample, date: Faker::Date.between(from: '2020-09-01', to: '2020-09-05') , start_time: "", end_time: "", location: Faker::Address.city, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: rand(1..15))
+start = Faker::Time.between(from: DateTime.now + rand(5..10).hours, to: DateTime.now + 168.hours)
+endtime = start + rand(0..3).hours
+event = Event.new(sport: sports.sample, start_time: start, end_time: endtime, location: Faker::Address.city, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: rand(1..15))
 event.save!
 end
 
