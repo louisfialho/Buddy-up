@@ -1,0 +1,7 @@
+<ul>
+  <% @events.each do |event| %>
+    <li> <%= event.organizer_id %>, <%= event.sport %>, <%= event.start_time %>, <%= event.end_time %>,
+      <%= event.location %>, <%= event.address %>, <%= event.longitude %>, <%= event.latitude %>
+    </li>
+  <% end %>
+</ul>

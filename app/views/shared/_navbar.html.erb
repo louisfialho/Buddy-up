@@ -1,25 +1,21 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "", class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
 
 <!-- NAVBAR SEARCH FORM - when we have all the routes, try to copy airbnb clone simple form -->
   <form class="form-inline my-2 my-lg-0">
     <div class="form">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <input class="form-control mr-sm-2" type="date" placeholder="Search" aria-label="Search">
-      <input class="form-control mr-sm-2" type="time" placeholder="Search" aria-label="Search">
+      <input class="form-control mr-sm-2" type="search">
+      <input class="form-control mr-sm-2" type="date">
+      <input class="form-control mr-sm-2" type="time">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </div>
   </form>
 
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
         <li class="nav-item active">
