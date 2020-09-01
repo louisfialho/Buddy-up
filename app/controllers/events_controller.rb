@@ -2,21 +2,14 @@ class EventsController < ApplicationController
   def index
     @events = Event.all
 
-    # if search_params.present?
-    #   @location = search_params["location"]
-    #   @sport = search_params["sport"]
-    #   @events = Event.where("location ILIKE ? AND sport ILIKE ?", @location, @sport)
-    # end
-
-
     if search_params.present?
       @location = search_params["location"]
-      if search_params["sport"].present?
-        @sport = search_params["sport"]
-        @events = Event.where("location ILIKE ? AND sport = ?", @location, @sport)
-      else
-        @events = Event.where("location ILIKE ?", @location)
-      end
+      @sport = search_params["sport"]
+      @participant_date = search_params["participant_date"]
+      @participant_time = search_params["participant_time"]
+      @participant_date_time = @participant_date + ' ' + @participant_time + ':' + '23 UTC'
+      # @events = Event.where("location ILIKE ? AND sport = ?", @location, @sport)
+      @events = Event.where("location ILIKE ? AND sport = ? AND start_time < ? AND end_time > ?", @location, @sport, @participant_date_time, @participant_date_time)
     end
 
   end
@@ -27,7 +20,7 @@ class EventsController < ApplicationController
  private
 
   def search_params
-    params.require(:search).permit(:location, :sport)
+    params.require(:search).permit(:location, :sport, :participant_date, :participant_time)
   end
 
 end
