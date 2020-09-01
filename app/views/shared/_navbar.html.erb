@@ -4,13 +4,23 @@
     <% end %>
 
 <!-- NAVBAR SEARCH FORM - when we have all the routes, try to copy airbnb clone simple form -->
-  <form class="form-inline my-2 my-lg-0">
+<!--   <form class="form-inline my-2 my-lg-0">
     <div class="form">
       <input class="form-control mr-sm-2" type="search">
       <input class="form-control mr-sm-2" type="date">
       <input class="form-control mr-sm-2" type="time">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </div>
+  </form> -->
+
+<%= simple_form_for :search, url: events_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+  <form class="form-inline my-2 my-lg-0">
+    <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
+<!--       <input class="form-control mr-sm-2" type="search">
+      <input class="form-control mr-sm-2" type="date">
+      <input class="form-control mr-sm-2" type="time">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    <% end %>
   </form>
 
 
