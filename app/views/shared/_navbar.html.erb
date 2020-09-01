@@ -16,6 +16,8 @@
 <%= simple_form_for :search, url: events_path, method: "GET", html: { class: 'form-inline' } do |f| %>
   <form class="form-inline my-2 my-lg-0">
     <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
+    <%= f.input :sport, input_html: { class: "recognitionStyling form-control mr-sm-2" }, prompt: "Sport", collection: ["Tennis", "Baseball", "Soccer", "Badminton", "Rugby", "Swimming", "Running", "Volleyball"], label: false %>
+    <%= f.submit "Search", class: 'btn btn-outline-success my-2 my-sm-0'%>
 <!--       <input class="form-control mr-sm-2" type="search">
       <input class="form-control mr-sm-2" type="date">
       <input class="form-control mr-sm-2" type="time">
