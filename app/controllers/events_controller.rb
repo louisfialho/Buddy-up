@@ -12,6 +12,12 @@ class EventsController < ApplicationController
       @participant_time = search_params["participant_time"]
       @participant_date_time = @participant_date + ' ' + @participant_time + ':' + '23 UTC'
       @events = Event.where("location ILIKE ? AND sport = ? AND start_time < ? AND end_time > ?", @location, @sport, @participant_date_time, @participant_date_time)
+
+      @markers = @flats.geocoded.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
     end
   end
 
