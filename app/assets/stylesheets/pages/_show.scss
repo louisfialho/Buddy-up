@@ -12,12 +12,7 @@ body {
   background-color: #F7F7F7;
 }
 
-booking.style {
-    border: 1px solid rgb(221, 221, 221);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-}
+
 
 .flex-wrap-center {
   display: flex;
@@ -26,11 +21,16 @@ booking.style {
 }
 
 .form-container {
+  border-radius: 25px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
   background-color: white;
   padding: 30px;
   width: 350px;
   margin: 0 auto;
+}
+
+.prompt {
+  font-size: 20px;
 }
 
 
@@ -84,4 +84,16 @@ booking.style {
 #information {
   display: flex;
   justify-content: space-between;
+}
+
+#date-time {
+  border: 1px solid rgb(221, 221, 221);
+  border-top-left-radius: 25px;
+  padding: 24px;
+}
+
+#sport {
+  border: 1px solid rgb(221, 221, 221);
+  border-top-right-radius: 25px;
+  padding: 24px;
 }

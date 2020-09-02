@@ -20,13 +20,14 @@
 
         <div class="form-container">
 
+        <p class="prompt"> Book this event! </p>
 
         <div id="information">
           <div id="date-time">
-            <p>Monday 23rd, 17h00</p>
+            <p><%= @event.start_time %></p>
           </div>
           <div id="sport">
-            <p>Basketball</p>
+            <p><%= @event.sport %></p>
           </div>
         </div>
 
