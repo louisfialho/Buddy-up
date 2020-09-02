@@ -5,6 +5,18 @@
   margin: 16px;
 }
 
+.main-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  // margin: 16px;
+}
+
+#map {
+  height: 100%;
+  position: sticky;
+  top: 80px;
+}
+
 .card-product {
   overflow: hidden;
   height: 180px;
