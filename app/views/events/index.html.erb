@@ -11,6 +11,9 @@
           <div class="card-product-infos">
             <h2><strong><%= event.organizer.first_name %> <%= event.organizer.last_name %></strong></h2>
             <p><strong><%= event.sport %></strong></p>
+            <p><strong>Skill Level:</strong> <% event.organizer.skill_level.times do %>
+               <span class="fa fa-star checked"></span>
+            <% end %>
             <p><%= event.start_time %></p>
             <p><%= event.address %></p>
             <div class="text-right">
