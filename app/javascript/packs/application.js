@@ -41,3 +41,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initUpdateNavbarOnScroll();
 });
+
+import {add_participants} from './booking'
+add_participants()
+
+// import {save_booking} from './booking'
+// save_booking()
