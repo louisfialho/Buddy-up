@@ -1,5 +1,6 @@
 .main-container {
   display: flex;
+  justify-content: space-between;
 }
 
 body {
@@ -11,6 +12,12 @@ body {
   background-color: #F7F7F7;
 }
 
+booking.style {
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
 
 .flex-wrap-center {
   display: flex;
@@ -65,4 +72,16 @@ body {
 .btn-primary:active,
 .btn-primary:focus {
   background-color: #FF5A5F;
+}
+
+#participants {
+  border: 1px solid rgb(221, 221, 221);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 24px;
+}
+
+#information {
+  display: flex;
+  justify-content: space-between;
 }
