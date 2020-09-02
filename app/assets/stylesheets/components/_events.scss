@@ -9,11 +9,13 @@ html, body
 }
 
 .cards {
-  display: grid;
+  display: flex;
   // grid-template-columns: 1fr 1fr;
   grid-gap: 26px;
   margin: 20px;
-  margin-left: 140px;
+  margin-left: 140px; // take this out if you want to have more than one
+  flex-wrap: wrap;
+  // flex-shrink: 3;
 }
 
 .main-container {
@@ -27,6 +29,13 @@ html, body
   position: sticky;
   top: 0;
   margin: 0;
+  padding: 0;
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
+}
+
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
 }
 
 .card-product {
