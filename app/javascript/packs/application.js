@@ -32,3 +32,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import {add_participants} from './booking'
+add_participants()
+
+// import {save_booking} from './booking'
+// save_booking()

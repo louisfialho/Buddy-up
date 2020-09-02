@@ -1,4 +1,4 @@
-.main-container {
+.show-container {
   display: flex;
   justify-content: space-between;
 }
@@ -11,8 +11,6 @@ body {
   align-items: center;
   background-color: #F7F7F7;
 }
-
-
 
 .flex-wrap-center {
   display: flex;
@@ -42,12 +40,6 @@ body {
   font-size: 16px;
 }
 
-#submit {
-  width: 100%;
-  margin-top: 10px;
-  border-radius: 15px;
-}
-
 #counter {
   margin: 0 15px;
 }
@@ -66,6 +58,7 @@ body {
   background-color: #FF5A5F;
   padding: 16px 24px;
   border: none;
+  border-radius: 25px;
 }
 
 .btn-primary:hover,

@@ -1,6 +1,3 @@
-
-
-
 <div class="main-container ">
 <!--   That's the main container that has the right side (user info) and left side (bookings). I added display flex for this container in _show.scss
  -->
@@ -37,12 +34,13 @@
             <div class="actions">
               <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
               <span id="counter" data-count="1">1</span>
-              <a href="#" class="btn round-bordered incrementer" data-offset="1">+</a>
+              <a href="#" onsubmit="return false;" class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
             </div>
           </div>
 
-
-          <input type="submit" value="Book event" class="btn btn-primary" id="submit">
+         <%= simple_form_for([@event, @booking]) do |f| %>
+          <%= f.submit "Book event", class:"btn-primary" %>
+         <% end %>
 
         </div>
 
@@ -50,7 +48,6 @@
     </div>
   </div>
 
-  <script src="main.js"></script>
 </div>
 
 </div>
