@@ -1,9 +1,17 @@
-<!-- #just did it quickly, change anything you see fit -->
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/flagged/photo-1576972405668-2d020a01cbfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1506&q=80);">
+   <div class="layout d-flex justify-content-center align-items-center">
+    <h1>Find a Buddy</h1>
+    <h2 style="color:white", class=" mb-5">BuddyUp lets you find buddies to enjoy your favourite sport</h2>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1547347298-4074fc3086f0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3150&q=80);">
-  <div class="d-flex justify-content-center align-items-center" style="height:100px;">
-      <div>
-      <h1>Find a New Buddy</h1>
-      </div>
+    <div class="search-bar">
+    <%= simple_form_for :search, url: events_path, method: "GET", html: { class: 'form-inline' } do |f| %>
+        <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
+        <%= f.input :sport, input_html: { class: "recognitionStyling form-control mr-sm-2" }, prompt: "Sport", collection: ["Tennis", "Baseball", "Soccer", "Badminton", "Rugby", "Swimming", "Running", "Volleyball"], label: false %>
+        <%= f.input :participant_date, as: :date, html5: true, label: false %>
+        <%= f.input :participant_time, as: :time, html5: true, label: false %>
+        <%= f.submit "Search", class: 'btn btn-outline-primary my-2 my-sm-0'%>
+    <% end %>
+    </div>
   </div>
+</div>
 
