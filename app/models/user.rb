@@ -9,4 +9,11 @@ class User < ApplicationRecord
 
   # has_many :events, foreign_key: "organizer_id"
   # has_many :events
+  has_many :reviewer_reviews, foreign_key: "reviewer_id", class_name: "Review"
+  # def reviewer_reviews
+  #   Review.where(reviewer_id: self.id)
+  # end
+
+  has_many :reviewee_reviews, foreign_key: "reviewee_id", class_name: "Review"
 end
+
