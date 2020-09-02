@@ -1,15 +1,8 @@
 .show-container {
   display: flex;
   justify-content: space-between;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
   align-items: center;
-  background-color: #F7F7F7;
+  padding: 300px;
 }
 
 .flex-wrap-center {
@@ -31,6 +24,9 @@ body {
   font-size: 20px;
 }
 
+.info {
+  flex-grow: 1;
+}
 
 .flex-between {
   display: flex;

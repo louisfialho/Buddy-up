@@ -28,6 +28,15 @@ class EventsController < ApplicationController
         @events = Event.where("location ILIKE ?", @location)
       end
     end
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { event: event })
+
+      }
+    end
   end
 
  private

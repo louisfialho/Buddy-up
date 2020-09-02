@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :events, only: [:show, :index ] do
     resources :bookings, only: [:create]
   end
+
 end

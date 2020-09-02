@@ -24,13 +24,22 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initUpdateNavbarOnScroll();
 });
 
 import {add_participants} from './booking'

@@ -2,20 +2,33 @@
   background-size: cover;
   background-position: center;
   padding: 150px 0;
-  height: 500px;
+  height: 850px;
+  margin-top: 0;
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-bottom: 400px;
 }
 
 .banner h1 {
-  margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 50px;
+  font-size: 80px;
   font-weight: bold;
+  position: relative;
+  text-align: center;
+  font-family: Montserrat;
+  padding-top: 100px;
 }
 
+
+
 .banner p {
-  font-size: 20px;
+  font-size: 35px;
   color: white;
-  opacity: .7;
+  opacity: .85;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-family: Raleway;
+  height: 500px;
 }
+
