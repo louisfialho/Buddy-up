@@ -6,21 +6,21 @@ html, body
 
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  // grid-template-columns: 1fr;
   grid-gap: 26px;
   margin: 16px;
 }
 
 .main-container {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  // grid-template-columns: 2fr 1fr;
   // margin: 16px;
 }
 
 #map {
   height: 100%;
   position: sticky;
-  // top: 80px;
+  top: 0;
 }
 
 .card-product {
