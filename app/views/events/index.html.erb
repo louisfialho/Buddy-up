@@ -1,7 +1,9 @@
 <div class ="container-fluid">
   <div class="main-container">
 
-    <div class="container">
+    <!-- <div class="container"> -->
+      <div class="row">
+      <div class="col-7">
       <div class="cards">
       <% @events.each do |event| %>
         <div class="card-product">
@@ -9,7 +11,10 @@
           <div class="card-product-infos">
             <h2><strong><%= event.organizer.first_name %> <%= event.organizer.last_name %></strong></h2>
             <p><strong><%= event.sport %></strong></p>
-            <p><%= event.start_time %> - <%= event.end_time %></p>
+            <p><strong>Skill Level:</strong> <% event.organizer.skill_level.times do %>
+               <span class="fa fa-star checked"></span>
+            <% end %>
+            <p><%= event.start_time %></p>
             <p><%= event.address %></p>
             <div class="text-right">
               <%= link_to "Select Buddy", event_path(event), class: "btn btn-ghost"%>
@@ -21,13 +26,16 @@
 
       </div>
     </div>
+    <!-- </div> -->
 
+<div class="col-5 nopadding">
     <div id="map"
-         style="width: 100%; height: 760px;"
+         style="width: 100%; height: 100vh;"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 
     </div>
-
+  </div>
+</div>
   </div>
 </div>
