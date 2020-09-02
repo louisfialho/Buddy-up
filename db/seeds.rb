@@ -33,7 +33,7 @@ puts "Creating events..."
 
 
 50.times do
-start = Faker::Time.between(from: DateTime.now + rand(5..10).hours, to: DateTime.now + 168.hours)
+start = Faker::Time.forward(days: 23,  period: :evening)
 endtime = start + rand(0..3).hours
 event = Event.new(sport: sports.sample, start_time: start, end_time: endtime, location: cities.sample, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: rand(1..15))
 event.save!
