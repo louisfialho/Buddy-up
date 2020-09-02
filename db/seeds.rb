@@ -10,9 +10,10 @@ require 'faker'
 
 
 puts "Cleaning database..."
+
+Booking.destroy_all
+Event.destroy_all
 User.destroy_all
-# Event.destroy_all
-# Booking.destroy_all
 
 
 puts "Creating users..."
@@ -20,6 +21,7 @@ puts "Creating users..."
 sports = ["Tennis", "Baseball", "Soccer", "Badminton", "Rugby", "Swimming", "Running", "Volleyball"]
 language = ["French", "English", "German", "Portugese", "Spanish"]
 gender = ["Male", "Female"]
+cities = ["Lisbon", "Paris", "London"]
 
 
 50.times do
@@ -29,15 +31,18 @@ end
 
 puts "Creating events..."
 
+
 50.times do
-event = Event.new(sport: sports.sample, date: Faker::Date.between(from: '2020-09-01', to: '2020-09-05') , start_time: "", end_time: "", location: Faker::Address.city, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: rand(1..15))
+start = Faker::Time.between(from: DateTime.now + rand(5..10).hours, to: DateTime.now + 168.hours)
+endtime = start + rand(0..3).hours
+event = Event.new(sport: sports.sample, start_time: start, end_time: endtime, location: cities.sample, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: User.all.sample.id)
 event.save!
 end
 
 puts "Creating bookings..."
 
 50.times do
-booking = Booking.new(event_id: rand(1..50), participant_id: rand(16..50))
+booking = Booking.new(event_id: Event.all.sample.id, participant_id: User.all.sample.id)
 booking.save!
 end
 

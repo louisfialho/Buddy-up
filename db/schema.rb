@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_31_164857) do
+ActiveRecord::Schema.define(version: 2020_09_02_112251) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,7 +29,6 @@ ActiveRecord::Schema.define(version: 2020_08_31_164857) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sport"
-    t.date "date"
     t.time "start_time"
     t.time "end_time"
     t.string "location"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 2020_08_31_164857) do
     t.float "latitude"
     t.bigint "organizer_id", null: false
     t.index ["organizer_id"], name: "index_events_on_organizer_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "text"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "event_id", null: false
+    t.integer "reviewer_id"
+    t.integer "reviewee_id"
+    t.index ["event_id"], name: "index_reviews_on_event_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -62,4 +73,5 @@ ActiveRecord::Schema.define(version: 2020_08_31_164857) do
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users", column: "participant_id"
   add_foreign_key "events", "users", column: "organizer_id"
+  add_foreign_key "reviews", "events"
 end
