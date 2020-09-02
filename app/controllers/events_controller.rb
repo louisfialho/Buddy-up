@@ -27,6 +27,13 @@ class EventsController < ApplicationController
         @events = Event.where("location ILIKE ?", @location)
       end
     end
+
+    @markers = @events.geocoded.map do |event|
+      {
+        lat: event.latitude,
+        lng: event.longitude
+      }
+    end
   end
 
  private
