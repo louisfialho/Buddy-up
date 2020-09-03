@@ -2,7 +2,7 @@
   <div class="main-container">
     <!-- <div class="container"> -->
     <div class="row">
-      <div class="col-7">
+      <div class="col-6">
         <div class="cards">
         <% @events.each do |event| %>
           <div class="card-product">
@@ -27,7 +27,7 @@
       </div>
 
 
-      <div class="col-5 nopadding">
+      <div class="col-6 nopadding">
         <div id="map"
              style="width: 100%; height: 100vh;"
              data-markers="<%= @markers.to_json %>"
