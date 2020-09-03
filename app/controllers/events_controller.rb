@@ -4,6 +4,10 @@ class EventsController < ApplicationController
     @booking = Booking.new
   end
 
+  def new
+    @event = Event.new
+  end
+
   def index
     @events = Event.all
     if search_params.present?
