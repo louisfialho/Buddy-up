@@ -32,6 +32,7 @@ end
 puts "Creating events..."
 
 
+
 60.times do
 start = Faker::Time.between(from: DateTime.now + rand(5..10).hours, to: DateTime.now + 168.hours)
 endtime = start + rand(0..3).hours
