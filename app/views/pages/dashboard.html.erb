@@ -29,7 +29,7 @@
            <p> Organizer: <%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %> </p>
            <br>
            <div class="text-right">
-             <%= link_to "See details", dashboard_path, class: "btn btn-ghost"%>
+             <%= link_to "See details", event_path(my_booking.event), class: "btn btn-ghost"%>
            </div>
         </div>
         </div>
@@ -53,7 +53,7 @@
              <p><%= link_to "edit", edit_event_path(my_event)%> </p>
              <br>
              <div class="text-right">
-               <%= link_to "See details", dashboard_path, class: "btn btn-ghost"%>
+               <%= link_to "See details", event_path(my_event), class: "btn btn-ghost"%>
              </div>
           </div>
           </div>
