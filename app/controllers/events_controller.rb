@@ -13,6 +13,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @review = Review.new
     @event = Event.find(params[:id])
     @booking = Booking.new
   end

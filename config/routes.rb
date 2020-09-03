@@ -4,8 +4,10 @@ Rails.application.routes.draw do
 
   resources :events, only: [:show, :index, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:create]
+    resources :reviews, only: [:create, :show]
   end
     resources :bookings, only: [:destroy]
+
 
   get "/dashboard", to: "pages#dashboard"
 end
