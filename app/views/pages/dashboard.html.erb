@@ -1,24 +1,55 @@
-<h1>Dashboard</h1>
+  <h1>Dashboard</h1>
 
-<br>
-<%= link_to "Create event", new_event_path, class: "btn btn-ghost" %>
-<br>
+  <br>
+ <ul class="list-inline tabs-underlined">
+  <li>
+    <a href="#" class="tab-underlined active">Profile</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Buddy Space</a>
+  </li>
+  <li>
+    <a href="#" class="tab-underlined">Organizer Space</a>
+  </li>
+</ul>
 
-<h1>Events I participate in</h1>
-<br>
-<% @my_bookings.each do |my_booking| %>
- <p> Sport: <%= my_booking.event.sport %> </p>
- <p> Start time: <%= my_booking.event.start_time %> </p>
- <p> End time: <%= my_booking.event.end_time %> </p>
- <p> Location: <%= my_booking.event.location %> </p>
- <p> Organizer: <%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %> </p>
- <br>
-<% end %>
 
-<h1>Events I organized</h1>
-<% @my_events.each do |my_event| %>
- <p> Sport: <%= my_event.sport %> </p>
- <p> Start time: <%= my_event.start_time %> </p>
- <p> End time: <%= my_event.end_time %> </p>
- <p> Address: <%= my_event.address %> </p>
-<% end %>
+  <h1>Events I participate in</h1>
+  <br>
+  <div class="cards">
+    <% @my_bookings.each do |my_booking| %>
+      <div class="card-product">
+        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
+        <div class="card-product-infos">
+           <h2><strong><%= my_booking.event.sport %></strong></h2>
+           <p> Start time: <%= my_booking.event.start_time %> </p>
+           <p> End time: <%= my_booking.event.end_time %> </p>
+           <p> Address: <%= my_booking.event.address %> </p>
+           <p> Organizer: <%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %> </p>
+           <br>
+           <div class="text-right">
+             <%= link_to "See details", dashboard_path, class: "btn btn-ghost"%>
+           </div>
+        </div>
+        </div>
+      <% end %>
+    </div>
+
+  <h1>Events I organized</h1>
+   <div class="cards">
+      <% @my_events.each do |my_event| %>
+        <div class="card-product">
+          <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
+          <div class="card-product-infos">
+             <h2><strong><%= my_event.sport %></strong></h2>
+             <p> Start time: <%= my_event.start_time %>  </p>
+             <p> End time: <%= my_event.end_time %>  </p>
+             <p> Address: <%= my_event.address %> </p>
+             <br>
+             <div class="text-right">
+               <%= link_to "See details", dashboard_path, class: "btn btn-ghost"%>
+             </div>
+          </div>
+          </div>
+        <% end %>
+      </div>
