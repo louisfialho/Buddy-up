@@ -5,5 +5,11 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to dashboard_path
   end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path
+  end
 end
 
