@@ -28,7 +28,6 @@
   <div class="card mx-auto">
       <div class="row justify-content-center">
         <div class="col-12 col-md-6 col-lg-8">
-          <form action="#">
           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
             <h2 class="text-center mb-5">Create your account</h2>
@@ -83,9 +82,10 @@
 <%= f.input :language, input_html: { class: "recognitionStyling form-control mr-sm-2" }, prompt: "Language", collection: ["French", "English", "German", "Portugese", "Spanish"], label: "Language" %>
               </div>
             </div>
+            <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn-primary btn-lg w-100" %>
             <p>Already have an account? Try to <%= render "devise/shared/links" %></p>
-          </form>
+            </div>
         </div>
       </div>
     </div>
