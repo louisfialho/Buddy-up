@@ -13,8 +13,21 @@
     </li>
   </ul>
   <div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Details of Profile</div>
-
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+     <div class="card-body">
+           <div>
+            <h5 class="card-title"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h5>
+            <p>
+            <p class="card-text">E-mail: <%= current_user.email %></p>
+            <p class="card-text">Gender: <%= current_user.gender %></p>
+            <p class="card-text">Age: <%= current_user.age %></p>
+            <p class="card-text">Main Language: <%= current_user.language %></p>
+            <p class="card-text">Favourite Sport: <%= current_user.favorite_sport %></p>
+            <p class="card-text">Skill level: <%= current_user.skill_level %></p>
+            </div>
+            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
+         </div>
+      </div>
 
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
        <h1>Events I participate in</h1>

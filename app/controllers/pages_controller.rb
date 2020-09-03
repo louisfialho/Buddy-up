@@ -9,3 +9,5 @@ class PagesController < ApplicationController
     @my_events = current_user.events
   end
 end
+
+
