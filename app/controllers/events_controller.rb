@@ -4,6 +4,16 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    redirect_to dashboard_path
+  end
+
   def create
     @user = current_user
     @event = Event.new(event_params)
