@@ -1,4 +1,4 @@
-<h1>Dashboard</h1>
+  <h1>Dashboard</h1>
   <br>
   <ul class=“nav nav-pills mb-3” id=“pills-tab” role=“tablist”>
     <li class=“nav-item” role=“presentation”>
@@ -52,7 +52,7 @@
         </div>
     </div>
     <div class=“tab-pane fade” id=“pills-contact” role=“tabpanel” aria-labelledby=“pills-contact-tab”>
-      <%= link_to “Create new event”, new_event_path , class: “btn btn-ghost” %>
+      <%= link_to "Create", new_event_path , class: "btn btn-ghost" %>
       <h1>Events I organized</h1>
        <div class=“cards”>
       <% @my_events.each do |my_event| %>
@@ -76,3 +76,5 @@
           </div>
     </div>
   </div>
+
+
