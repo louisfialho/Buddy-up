@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+
+<% @my_bookings.each do |my_booking| %>
+ <p> Sport: <%= my_booking.event.sport %> </p>
+ <p> Start time: <%= my_booking.event.start_time %> </p>
+ <p> End time: <%= my_booking.event.end_time %> </p>
+ <p> Location: <%= my_booking.event.location %> </p>
+ <p> Organizer: <%= my_booking.event.organizer.first_name %> </p>
+ <br>
+<% end %>
