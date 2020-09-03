@@ -1,0 +1,98 @@
+h1 {
+  font-family: "Varela", sans-serif;
+}
+
+
+.wrapper--w960 {
+    max-width: 960px;
+    display:flex
+}
+
+.card-2 {
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  width: 100%;
+  display: table;
+  background: #fff;
+}
+
+.card {
+    overflow: hidden;
+    border-radius: 3px;
+    background: #fff;
+}
+
+.card-2 .card-heading {
+    background: url("https://images.unsplash.com/photo-1564415315949-7a0c4c73aab4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80") top left/cover no-repeat;
+    width: 35%;
+    background-size: cover;
+    display: table-cell;
+    margin: 0px !important;
+    padding: 0px !important;
+    box-sizing: inherit;
+}
+
+.card-2 .card-body {
+    display: table-cell;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 37px;
+}
+
+input {
+    outline: none;
+    margin: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+
+.input--style-2 {
+    padding: 9px 0;
+    color: #666;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-2 {
+    width: calc((100% - 60px) / 2);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.input--style-2::placeholder {
+    color: #808080;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+
+
