@@ -1,5 +1,11 @@
 <h1>Dashboard</h1>
 
+<br>
+<%= link_to "Create event", new_event_path, class: "btn btn-ghost" %>
+<br>
+
+<h1>Events I participate in</h1>
+<br>
 <% @my_bookings.each do |my_booking| %>
  <p> Sport: <%= my_booking.event.sport %> </p>
  <p> Start time: <%= my_booking.event.start_time %> </p>
@@ -9,13 +15,10 @@
  <br>
 <% end %>
 
-
-
-<div class="card2" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body2">
-    <h5 class="card-title2">Card title</h5>
-    <p class="card-text2">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+<h1>Events I organized</h1>
+<% @my_events.each do |my_event| %>
+ <p> Sport: <%= my_event.sport %> </p>
+ <p> Start time: <%= my_event.start_time %> </p>
+ <p> End time: <%= my_event.end_time %> </p>
+ <p> Address: <%= my_event.address %> </p>
+<% end %>

@@ -1,0 +1,9 @@
+<div class="form">
+<%= simple_form_for(@event) do |f| %>
+  <%= f.input :sport, collection: ["Tennis", "Baseball", "Soccer", "Badminton", "Rugby", "Swimming", "Running", "Volleyball"]%>
+  <%= f.input :start_time, as: :datetime %>
+  <%= f.input :end_time, as: :datetime %>
+  <%= f.input :address, as: :text %>
+  <%= f.button :submit, class: "btn btn-ghost"%>
+<% end %>
+</div>
