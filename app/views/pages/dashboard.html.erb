@@ -1,36 +1,36 @@
   <h1>Dashboard</h1>
   <br>
-  <ul class=“nav nav-pills mb-3” id=“pills-tab” role=“tablist”>
-    <li class=“nav-item” role=“presentation”>
-      <a class=“nav-link active” id=“pills-home-tab” data-toggle=“pill” href=“#pills-home” role=“tab” aria-controls=“pills-home” aria-selected=“true”>Profile</a>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
     </li>
-    <li class=“nav-item” role=“presentation”>
-      <a class=“nav-link” id=“pills-profile-tab” data-toggle=“pill” href=“#pills-profile” role=“tab” aria-controls=“pills-profile” aria-selected=“false”>Buddy Space</a>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Buddy Space</a>
     </li>
-    <li class=“nav-item” role=“presentation”>
-      <a class=“nav-link” id=“pills-contact-tab” data-toggle=“pill” href=“#pills-contact” role=“tab” aria-controls=“pills-contact” aria-selected=“false”>Organizer Space</a>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Organizer Space</a>
     </li>
   </ul>
-  <div class=“tab-content” id=“pills-tabContent”>
-    <div class=“tab-pane fade show active” id=“pills-home” role=“tabpanel” aria-labelledby=“pills-home-tab”>
-     <div class=“card-body”>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+     <div class="card-body">
            <div>
-            <h5 class=“card-title”><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h5>
+            <h5 class="card-title"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h5>
             <p>
-            <p class=“card-text”>E-mail: <%= current_user.email %></p>
-            <p class=“card-text”>Gender: <%= current_user.gender %></p>
-            <p class=“card-text”>Age: <%= current_user.age %></p>
-            <p class=“card-text”>Main Language: <%= current_user.language %></p>
-            <p class=“card-text”>Favourite Sport: <%= current_user.favorite_sport %></p>
-            <p class=“card-text”>Skill level: <%= current_user.skill_level %></p>
+            <p class="card-text">E-mail: <%= current_user.email %></p>
+            <p class="card-text">Gender: <%= current_user.gender %></p>
+            <p class="card-text">Age: <%= current_user.age %></p>
+            <p class="card-text">Main Language: <%= current_user.language %></p>
+            <p class="card-text">Favourite Sport: <%= current_user.favorite_sport %></p>
+            <p class="card-text">Skill level: <%= current_user.skill_level %></p>
             </div>
-            <img class=“avatar-large” alt=“avatar-large” src=“https://kitt.lewagon.com/placeholder/users/arthur-littm”>
+            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
          </div>
       </div>
-    <div class=“tab-pane fade” id=“pills-profile” role=“tabpanel” aria-labelledby=“pills-profile-tab”>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
        <h1>Events I participate in</h1>
        <br>
-      <div class=“cards”>
+      <div class="cards">
     <% @my_bookings.each do |my_booking| %>
       <div class="card-product">
         <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
@@ -51,10 +51,10 @@
       <% end %>
         </div>
     </div>
-    <div class=“tab-pane fade” id=“pills-contact” role=“tabpanel” aria-labelledby=“pills-contact-tab”>
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
       <%= link_to "Create", new_event_path , class: "btn btn-ghost" %>
       <h1>Events I organized</h1>
-       <div class=“cards”>
+       <div class="cards">
       <% @my_events.each do |my_event| %>
         <div class="card-product">
           <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
