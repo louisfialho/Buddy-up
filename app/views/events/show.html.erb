@@ -1,5 +1,10 @@
-<div class="mt-5">
-<div class="container">
+
+
+<div class="show-container">
+
+<div class="info">
+
+
   <div class="row">
     <div class="col-sm-6">
       <div class="card mb-3" style="max-width: 30rem;">
@@ -33,7 +38,52 @@
           </div>
       </div>
     </div>
-   <div class="col-sm-6"></div>
+    </div>
   </div>
+  <div>
+
+<div class="booking col-sm-6">
+
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-8 text-center">
+
+        <div class="form-container">
+
+        <p class="prompt"> Book this event! </p>
+
+        <div id="information">
+          <div id="date-time">
+            <p><%= @event.start_time %></p>
+          </div>
+          <div id="sport">
+            <p><%= @event.sport %></p>
+          </div>
+        </div>
+
+
+          <div class="flex-between" id="participants">
+            Participants:
+            <div class="actions">
+              <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
+              <span id="counter" data-count="1">1</span>
+              <a href="#" onsubmit="return false;" class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
+            </div>
+          </div>
+
+         <%= simple_form_for([@event, @booking]) do |f| %>
+          <%= f.submit "Book event", class:"btn-primary" %>
+         <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
 </div>
+
+</div>
+
 </div>

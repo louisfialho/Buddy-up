@@ -1,1 +1,90 @@
 
+.show-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 300px;
+}
+
+.flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.form-container {
+  border-radius: 25px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  background-color: white;
+  padding: 30px;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.prompt {
+  font-size: 20px;
+}
+
+.info {
+  flex-grow: 1;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#counter {
+  margin: 0 15px;
+}
+
+.round-bordered {
+  border: 1px solid #5a5a5a;
+  border-radius: 50%;
+  width: 35px;
+  font-size: 18px;
+  color: #848484;
+  height: 35px;
+  padding: 3px
+}
+
+.btn-primary {
+  background-color: #FF5A5F;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 25px;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: #FF5A5F;
+}
+
+#participants {
+  border: 1px solid rgb(221, 221, 221);
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 24px;
+}
+
+#information {
+  display: flex;
+  justify-content: space-between;
+}
+
+#date-time {
+  border: 1px solid rgb(221, 221, 221);
+  border-top-left-radius: 25px;
+  padding: 24px;
+}
+
+#sport {
+  border: 1px solid rgb(221, 221, 221);
+  border-top-right-radius: 25px;
+  padding: 24px;
+}
+
