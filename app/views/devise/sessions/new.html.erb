@@ -1,20 +1,29 @@
-<h2>Log in</h2>
-
+<div class="pt-5">
+  <div class="card mx-auto">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-6 col-lg-8">
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
+            <h2 class="text-center mb-5">Log In</h2>
+            <div class="form-row">
+              <div class="col-6 form-group">
+                <%= f.input :email,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
+              </div>
+              <div class="col-6 form-group">
+                <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+              </div>
+            </div>
+            <div class="form-actions">
+              <%= f.button :submit, "Log in", class: "btn btn-primary btn-lg w-100" %>
+            </div>
+            <p>Don't have an account? Try to <%= render "devise/shared/links" %></p>
+            </div>
+        </div>
+      </div>
+    </div>
+    </div>
+<%end%>
