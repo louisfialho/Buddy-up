@@ -1,4 +1,4 @@
-<div class="form">
+<div class="new-event-form-container">
 <%= simple_form_for(@event) do |f| %>
   <%= f.input :sport, collection: ["Tennis", "Baseball", "Soccer", "Badminton", "Rugby", "Swimming", "Running", "Volleyball"]%>
   <%= f.input :start_time, as: :datetime %>
