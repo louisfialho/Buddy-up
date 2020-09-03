@@ -42,7 +42,11 @@
         <div class="card-product">
           <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
           <div class="card-product-infos">
-             <h2><strong><%= my_event.sport %></strong>   <a href="<%=edit_event_path(my_event)%>"><i class="fas fa-edit"></i></a></h2>
+             <h2><strong><%= my_event.sport %></strong>
+              <a href="<%=edit_event_path(my_event)%>"><i class="fas fa-edit"></i></a>
+     <!--          <%= link_to "Delete event in #{my_event.address}", event_path(my_event), method: :delete%> -->
+              <%= link_to content_tag(:i, nil, class: 'fas fa-trash'), event_path(my_event), method: :delete, data: {confirm: 'Are you sure?'}%>
+             </h2>
              <p> Start time: <%= my_event.start_time %>  </p>
              <p> End time: <%= my_event.end_time %>  </p>
              <p> Address: <%= my_event.address %> </p>

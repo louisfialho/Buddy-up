@@ -8,6 +8,12 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to dashboard_path
+  end
+
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
