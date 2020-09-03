@@ -10,6 +10,10 @@
     width: 530px;
     margin-bottom: 30px;
     // background: white;
+    // background: linear-gradient(to right, red 50%, blue 50%);
+    // background-size: 200% 100%;
+    // background-position:left bottom;
+    // transition: background s ease;
   }
 
 
@@ -17,7 +21,8 @@
 .card-product:hover {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   box-shadow: 0 0 20px rgba(4,245,255,0.3);
-  background-color: linear-gradient(rgba(4,200,255,0.4), #56BAEC);
+  background: linear-gradient(rgba(4,200,255,0.4), #56BAEC);
+  background-position:right bottom;
 }
 
 
