@@ -6,32 +6,33 @@
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-    transition: 1.5s ease;
+    transition: 1.7s ease;
     width: 530px;
     margin-bottom: 30px;
-    background: white;
-    background: linear-gradient(to right, white 50%, rgba(4,200,255,0.4) 50%);
-    background-size: 200% 100%;
-    background-position:left bottom;
-    transition: background 2s ease;
+    // background: white;
+    // background: linear-gradient(to right, white 50%, rgba(4,200,255,0.4) 50%);
+    // background-size: 200% 100%;
+    // background-position:left bottom;
+    // transition: background 2s ease;
   }
 
 .more-info {
   visibility: hidden;
   opacity: 0;
-  transition: visibility 0s, opacity 0.5s linear;
-}
-
-.more-info:hover {
-  visibility: visible;
-  opacity: 1;
+  transition: visibility 0.5s, opacity 1.5s linear;
 }
 
 .card-product:hover {
   box-shadow: 0 0 20px rgba(0,0,0,0.4);
   box-shadow: 0 0 20px rgba(4,245,255,0.3);
-  background-color: linear-gradient(rgba(4,200,255,0.4), #56BAEC);
-  background-position: right bottom;
+  // background-color: linear-gradient(rgba(4,200,255,0.4), #56BAEC);
+  // background-position: right bottom;
+  // content: "";
+
+  .more-info {
+      visibility: visible;
+      opacity: 1;
+  }
 }
 
 
