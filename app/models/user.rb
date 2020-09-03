@@ -16,4 +16,3 @@ class User < ApplicationRecord
 
   has_many :reviewee_reviews, foreign_key: "reviewee_id", class_name: "Review"
 end
-
