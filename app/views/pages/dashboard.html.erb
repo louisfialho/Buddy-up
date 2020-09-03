@@ -1,61 +1,70 @@
   <h1>Dashboard</h1>
 
   <br>
- <ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" class="tab-underlined active">Profile</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Buddy Space</a>
-  </li>
-  <li>
-    <a href="#" class="tab-underlined">Organizer Space</a>
-  </li>
-</ul>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Buddy Space</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Organizer Space</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Details of Profile</div>
 
-  <%= link_to "Create an event", new_event_path , class: "btn btn-ghost" %>
 
-  <h1>Events I participate in</h1>
-  <br>
-  <div class="cards">
-    <% @my_bookings.each do |my_booking| %>
-      <div class="card-product">
-        <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
-        <div class="card-product-infos">
-           <h2><strong><%= my_booking.event.sport %></strong></h2>
-           <p> Start time: <%= my_booking.event.start_time %> </p>
-           <p> End time: <%= my_booking.event.end_time %> </p>
-           <p> Address: <%= my_booking.event.address %> </p>
-           <p> Organizer: <%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %> </p>
-           <br>
-           <div class="text-right">
-             <%= link_to "See details", event_path(my_booking.event), class: "btn btn-ghost"%>
-           </div>
+    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+       <h1>Events I participate in</h1>
+       <br>
+      <div class="cards">
+        <% @my_bookings.each do |my_booking| %>
+          <div class="card-product">
+            <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
+            <div class="card-product-infos">
+               <h2><strong><%= my_booking.event.sport %></strong></h2>
+               <p> Start time: <%= my_booking.event.start_time %> </p>
+               <p> End time: <%= my_booking.event.end_time %> </p>
+               <p> Address: <%= my_booking.event.address %> </p>
+               <p> Organizer: <%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %> </p>
+               <br>
+               <div class="text-right">
+                 <%= link_to "See details", dashboard_path, class: "btn btn-ghost"%>
+               </div>
+            </div>
+            </div>
+          <% end %>
         </div>
-        </div>
-      <% end %>
     </div>
 
-  <h1>Events I organized</h1>
-   <div class="cards">
-      <% @my_events.each do |my_event| %>
-        <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
-          <div class="card-product-infos">
-             <h2><strong><%= my_event.sport %></strong>
-              <a href="<%=edit_event_path(my_event)%>"><i class="fas fa-edit"></i></a>
-     <!--          <%= link_to "Delete event in #{my_event.address}", event_path(my_event), method: :delete%> -->
-              <%= link_to content_tag(:i, nil, class: 'fas fa-trash'), event_path(my_event), method: :delete, data: {confirm: 'Are you sure?'}%>
-             </h2>
-             <p> Start time: <%= my_event.start_time %>  </p>
-             <p> End time: <%= my_event.end_time %>  </p>
-             <p> Address: <%= my_event.address %> </p>
-             <p><%= link_to "edit", edit_event_path(my_event)%> </p>
-             <br>
-             <div class="text-right">
-               <%= link_to "See details", event_path(my_event), class: "btn btn-ghost"%>
-             </div>
+
+    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+      <%= link_to "Create new event", new_event_path , class: "btn btn-ghost" %>
+      <h1>Events I organized</h1>
+       <div class="cards">
+          <% @my_events.each do |my_event| %>
+            <div class="card-product">
+              <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
+              <div class="card-product-infos">
+                 <h2><strong><%= my_event.sport %></strong></h2>
+                 <p> Start time: <%= my_event.start_time %>  </p>
+                 <p> End time: <%= my_event.end_time %>  </p>
+                 <p> Address: <%= my_event.address %> </p>
+                 <br>
+                 <div class="text-right">
+                   <%= link_to "See details", dashboard_path, class: "btn btn-ghost"%>
+                 </div>
+              </div>
+              </div>
+            <% end %>
           </div>
-          </div>
-        <% end %>
-      </div>
+    </div>
+  </div>
+
+
+
+
+
+
