@@ -1,5 +1,11 @@
 <h1>Dashboard</h1>
 
+<br>
+<%= link_to "Create event", new_event_path, class: "btn btn-ghost" %>
+<br>
+
+<h1>Events I participate in</h1>
+<br>
 <% @my_bookings.each do |my_booking| %>
  <p> Sport: <%= my_booking.event.sport %> </p>
  <p> Start time: <%= my_booking.event.start_time %> </p>
@@ -8,3 +14,12 @@
  <p> Organizer: <%= my_booking.event.organizer.first_name %> </p>
  <br>
 <% end %>
+
+<h1>Events I organized</h1>
+<% @my_events.each do |my_event| %>
+ <p> Sport: <%= my_event.sport %> </p>
+ <p> Start time: <%= my_event.start_time %> </p>
+ <p> End time: <%= my_event.end_time %> </p>
+ <p> Address: <%= my_event.address %> </p>
+<% end %>
+

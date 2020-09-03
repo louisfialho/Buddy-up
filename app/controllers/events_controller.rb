@@ -1,4 +1,17 @@
 class EventsController < ApplicationController
+
+  def new
+    @event = Event.new
+  end
+
+  def create
+    @user = current_user
+    @event = Event.new(event_params)
+    @event.organizer = @user
+    @event.save
+    redirect_to dashboard_path
+  end
+
   def show
     @event = Event.find(params[:id])
     @booking = Booking.new
@@ -42,5 +55,9 @@ class EventsController < ApplicationController
  private
   def search_params
     params.require(:search).permit(:location, :sport, :participant_date, :participant_time)
+  end
+
+  def event_params
+    params.require(:event).permit(:sport, :start_time, :end_time, :address)
   end
 end
