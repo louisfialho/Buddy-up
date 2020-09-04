@@ -8,6 +8,8 @@ class Event < ApplicationRecord
 
   has_many :reviews
 
+  has_one_attached :photo
+
   reverse_geocoded_by :latitude, :longitude do |obj,results|
     if geo = results.first
       obj.location = "#{geo.city}, #{geo.state}, #{geo.country}"

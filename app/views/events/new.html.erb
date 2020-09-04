@@ -29,6 +29,11 @@
                 autofocus: true,
                 input_html: { autocomplete: "address" }%>
             </div>
+            <div class="form-group">
+              <%= f.input :photo, as: :file,
+                required: true,
+                autofocus: true %>
+            </div>
             <div class="form-actions">
             <%= f.button :submit, "Create", class: "btn btn-primary btn-lg w-100" %>
             </div>
@@ -37,3 +42,4 @@
     </div>
     </div>
 <%end%>
+
