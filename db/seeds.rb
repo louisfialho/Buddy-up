@@ -24,7 +24,7 @@ gender = ["Male", "Female"]
 cities = ["Lisbon", "Paris", "London"]
 
 
-60.times do
+80.times do
 user = User.new(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name:Faker::Name.last_name , age: rand(20..60), gender: gender.sample, language: language.sample, favorite_sport: sports.sample, description: Faker::Lorem.paragraph, skill_level: rand(1..5), password: "123456")
 user.save!
 end
@@ -33,7 +33,7 @@ puts "Creating events..."
 
 
 
-60.times do
+120.times do
 start = Faker::Time.between(from: DateTime.now + rand(5..10).hours, to: DateTime.now + 168.hours)
 endtime = start + rand(0..3).hours
 event = Event.new(sport: sports.sample, start_time: start, end_time: endtime, location: cities.sample, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: User.all.sample.id)
@@ -42,7 +42,7 @@ end
 
 puts "Creating bookings..."
 
-60.times do
+120.times do
 booking = Booking.new(event_id: Event.all.sample.id, participant_id: User.all.sample.id)
 booking.save!
 end
