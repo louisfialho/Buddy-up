@@ -34,9 +34,11 @@ puts "Creating events..."
 
 
 120.times do
+file = URI.open('https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60')
 start = Faker::Time.between(from: DateTime.now + rand(5..10).hours, to: DateTime.now + 168.hours)
 endtime = start + rand(0..3).hours
 event = Event.new(sport: sports.sample, start_time: start, end_time: endtime, location: cities.sample, address: Faker::Address.full_address, longitude: Faker::Address.longitude, latitude:Faker::Address.latitude, organizer_id: User.all.sample.id)
+event.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 event.save!
 end
 
