@@ -64,7 +64,6 @@ class EventsController < ApplicationController
         lat: event.latitude,
         lng: event.longitude,
         infoWindow: render_to_string(partial: "info_window", locals: { event: event })
-
       }
     end
   end
@@ -75,6 +74,6 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:sport, :start_time, :end_time, :address)
+    params.require(:event).permit(:sport, :start_time, :end_time, :address, :photo)
   end
 end

@@ -10,8 +10,10 @@
             <div class="card-product-infos">
               <h2><strong><%= event.organizer.first_name %> <%= event.organizer.last_name %></strong></h2>
               <p><strong><%= event.sport %></strong></p>
+              <% if event.organizer.skill_level %>
               <p><strong>Skill Level:</strong> <% event.organizer.skill_level.times do %>
                  <span class="fa fa-star checked"></span>
+              <% end %>
               <% end %>
               <p><%= event.start_time %></p>
               <p><%= event.address %></p>
