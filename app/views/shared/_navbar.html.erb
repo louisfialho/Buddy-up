@@ -32,7 +32,9 @@
               <!-- do a loop here to repeat a link_to for however many events that have finished -->
                <% current_user.bookings.each do |booking| %>
                 <% if booking.event.end_time < Time.now  %>
-                  <%= link_to "Review your #{booking.event.sport} event", "#", class: "dropdown-item" %>
+                  <% first_name = User.find_by(id:Booking.first.event.organizer_id).first_name %>
+                  <% last_name = User.find_by(id:Booking.first.event.organizer_id).last_name %>
+                  <%= link_to "Review #{first_name} #{last_name} (#{booking.event.sport})", "#", class: "dropdown-item" %>
                 <% end %>
               <% end %>
             </div>
