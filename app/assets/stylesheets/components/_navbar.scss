@@ -30,4 +30,12 @@
 
 .search {
   margin-left: 10px;
+  color: #e90052;
+  border-color: #e90052;
+}
+
+.search:hover {
+  color: white;
+  border-color: #e90052;
+  background-color: #e90052;
 }
