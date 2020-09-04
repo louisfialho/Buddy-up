@@ -12,9 +12,7 @@
   </head>
 
   <body>
-    <% if action_name != "dashboard"%>
-      <%= render 'shared/navbar' %>
-    <% end %>
+    <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
   </body>
