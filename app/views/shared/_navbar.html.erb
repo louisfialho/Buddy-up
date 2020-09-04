@@ -35,6 +35,8 @@
                   <% first_name = User.find_by(id:Booking.first.event.organizer_id).first_name %>
                   <% last_name = User.find_by(id:Booking.first.event.organizer_id).last_name %>
                   <%= link_to "Review #{first_name} #{last_name} (#{booking.event.sport})", "#", class: "dropdown-item" %>
+                <% else %>
+                  <%= No updates %>
                 <% end %>
               <% end %>
             </div>
