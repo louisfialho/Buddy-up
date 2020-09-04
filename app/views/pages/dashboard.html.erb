@@ -1,3 +1,4 @@
+  <div class="main-dashboard-container">
   <h1>Dashboard</h1>
   <br>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -13,20 +14,26 @@
   </ul>
   <div class="tab-content" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-     <div class="card-body">
-           <div>
-            <h5 class="card-title"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h5>
-            <p>
-            <p class="card-text">E-mail: <%= current_user.email %></p>
-            <p class="card-text">Gender: <%= current_user.gender %></p>
-            <p class="card-text">Age: <%= current_user.age %></p>
-            <p class="card-text">Main Language: <%= current_user.language %></p>
-            <p class="card-text">Favourite Sport: <%= current_user.favorite_sport %></p>
-            <p class="card-text">Skill level: <%= current_user.skill_level %></p>
-            </div>
-            <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm">
-         </div>
+      <div class="card-container">
+        <span class="pro">You</span>
+        <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
+        <br>
+        <br>
+        <h4><%= current_user.first_name %> <%= current_user.last_name %></h4>
+        <div class="profile-details">
+          <p>E-mail: <%= current_user.email %></p>
+          <p>Gender: <%= current_user.gender %></p>
+          <p>Age: <%= current_user.age %></p></p>
+          <p>Main Language: <%= current_user.language %></p>
+          <p>Favourite Sport: <%= current_user.favorite_sport %></p>
+          <p>Skill level: <%= current_user.skill_level %></p>
+        </div>
+          <button class="btn btn-outline-primary my-2 my-sm-0">
+            Edit profile
+          </button>
+        </div>
       </div>
+
 
     <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
        <h1>Events I participate in</h1>
@@ -77,5 +84,6 @@
           </div>
     </div>
   </div>
+</div>
 
 
