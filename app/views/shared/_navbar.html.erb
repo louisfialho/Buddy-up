@@ -30,9 +30,15 @@
             <%= image_tag "bell-solid.svg", class: "dropdown-toggle", id: "navbarDropdown2", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
               <!-- do a loop here to repeat a link_to for however many events that have finished -->
-               <% current_user.bookings.each do |booking| %>
-                <% if booking.event.end_time < Time.now  %>
-                  <%= link_to "Review your #{booking.event.sport} event", "#", class: "dropdown-item" %>
+              <% if current_user.bookings.empty? == true %>
+                <div class="notification-dropdown">no updates</div>
+              <% else %>
+                <% current_user.bookings.each do |booking| %>
+                  <% if booking.event.end_time < Time.now  %>
+                    <% f_name = User.find_by(id:booking.event.organizer_id).first_name %>
+                    <% l_name = User.find_by(id:booking.event.organizer_id).last_name %>
+                    <%= link_to "Review #{f_name} #{l_name} (#{booking.event.sport})", event_path(booking.event), class: "dropdown-item" %>
+                  <% end %>
                 <% end %>
               <% end %>
             </div>
