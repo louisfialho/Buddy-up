@@ -17,4 +17,12 @@ module ApplicationHelper
       true
     end
   end
+
+  # def current_user_events_to_review?
+  #   current_user.bookings.each do |booking|
+  #     if booking.event.end_time < Time.now
+  #       return booking.event.sport
+  #     end
+  #   end
+  # end
 end
