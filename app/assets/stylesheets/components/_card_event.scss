@@ -136,6 +136,11 @@ html, body {
   overflow: hidden;
   position: relative;
   margin: 1.5rem;
+  transition: 1s;
+}
+
+.card-event:hover {
+  box-shadow: 0 0 10px rgba(4,245,255,0.4);;
 }
 
 #btn-event {
