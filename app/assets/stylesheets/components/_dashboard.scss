@@ -24,6 +24,7 @@ p {
   padding-top: 10px;
 }
 
+
 .card-container {
   background-color: white;
   border-radius: 25px;
@@ -34,7 +35,12 @@ p {
   max-width: 100%;
   text-align: center;
   height: 550px;
+  background: white;
+  // background: linear-gradient(to right, white 50%, rgb(34, 222, 237) 50%);
+  background-size: 200% 100%;
   background-image: none;
+  background-position:left bottom;
+  transition: all 1.5s;
 }
 
 .card-container:hover {
