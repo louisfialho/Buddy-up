@@ -54,16 +54,16 @@
 }
 
 .btn-primary {
-  background-color: #FF5A5F;
+  background-color: rgba(54, 211,255, 0.8);
   padding: 16px 24px;
   border: none;
-  // border-radius: 25px;
+  border-radius: 4px;
 }
 
 .btn-primary:hover,
 .btn-primary:active,
 .btn-primary:focus {
-  background-color: #FF5A5F;
+  background-color: #36D3FF;
 }
 
 #participants {
