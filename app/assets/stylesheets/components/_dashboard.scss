@@ -160,7 +160,7 @@ html, body {
   position: absolute;
   width: 150px;
   height: 100%;
-  background: linear-gradient(#dE685E, #EE786E);
+  background: rgba(232, 236, 241, 1);
   transition: width 0.4s;
   overflow: hidden;
   z-index: 2;
@@ -226,7 +226,7 @@ html, body {
 }
 
 .card .additional .more-info h2 {
-  color: #fff;
+  color: rgba(46, 49, 49, 1);
   margin-bottom: 0;
 }
 
@@ -236,7 +236,7 @@ html, body {
 
 .card .additional .coords {
   margin: 0 1rem;
-  color: #fff;
+  color: rgba(46, 49, 49, 1);
   font-size: 1rem;
 }
 
@@ -256,8 +256,13 @@ html, body {
   left: 1rem;
   right: 1rem;
   top: auto;
-  color: #fff;
+  color: rgba(46, 49, 49, 1);
 }
+
+.stats .fa, .value {
+  color: rgba(191, 191, 191, 1)
+}
+
 
 .card.green .additional .stats {
   color: #325C46;
