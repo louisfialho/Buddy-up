@@ -30,6 +30,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
+// = require datetime_picker_input
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
