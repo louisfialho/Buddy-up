@@ -151,9 +151,17 @@ html, body {
   margin: 1.5rem;
 }
 
+#btn-event {
+  color: white;
+}
+
+#btn-event:hover {
+    color: #2E3131;
+  }
+
 .card h2 {
   text-align: center;
-  margin-top: 4px;
+  margin-top: 5px;
 }
 
 .card .additional {
@@ -230,7 +238,7 @@ html, body {
   margin-bottom: 0;
 }
 
-.card.green .additional .more-info h1 {
+.card.green .additional .more-info h2 {
   color: #224C36;
 }
 
@@ -256,7 +264,7 @@ html, body {
   left: 1rem;
   right: 1rem;
   top: auto;
-  color: rgba(46, 49, 49, 1);
+  color: rgba(191, 191, 191, 1);
 }
 
 .stats .fa, .value {
