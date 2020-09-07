@@ -24,50 +24,50 @@
       </div>
     </div>
 
-<div class="booking col-sm-6">
+    <div class="booking col-sm-6">
 
 
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-8 text-center">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="text-center">
 
-        <div class="form-container">
+            <div class="form-container">
 
-        <p class="prompt"> Book this event! </p>
+            <p class="prompt"> Book this event! </p>
 
-        <div id="information">
-          <div id="date-time">
-            <p><%= @event.start_time %></p>
-          </div>
-          <div id="sport">
-            <p><%= @event.sport %></p>
-          </div>
-        </div>
-
-
-          <div class="flex-between" id="participants">
-            Participants:
-            <div class="actions">
-              <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
-              <span id="counter" data-count="1">1</span>
-              <a href="#" onsubmit="return false;" class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
+            <div id="information">
+              <div id="date-time">
+                <p><%= @event.start_time %></p>
+              </div>
+              <div id="sport">
+                <p><%= @event.sport %></p>
+              </div>
             </div>
+
+
+              <div class="flex-between" id="participants">
+                Participants:
+                <div class="actions">
+                  <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
+                  <span id="counter" data-count="1">1</span>
+                  <a href="#" onsubmit="return false;" class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
+                </div>
+              </div>
+
+              <%= simple_form_for [@event, @booking] do |f| %>
+                <%= f.submit "Book event", class:"btn-primary" %>
+              <% end %>
+
+            </div>
+
           </div>
-
-          <%= simple_form_for [@event, @booking] do |f| %>
-            <%= f.submit "Book event", class:"btn-primary" %>
-          <% end %>
-
         </div>
-
       </div>
+
     </div>
   </div>
 
-</div>
-</div>
-
-<div class="row show-details">
+  <div class="row show-details">
 
     <div class="col-6">
         <div class="card mb-3" >
@@ -106,7 +106,8 @@
       </div>
     </div>
       <!-- list the reviews -->
-      <div  id="anchor" class='list-group thin-border-top mt-5 mb-3'>
+      <div  id="anchor" class='list-group thin-border-top mt-2 mb-3'>
+        <div class="col-6 form-group">
         <% if @event.reviews.count != 0 %>
           <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
           <% @event.reviews.reverse.each do |review| %>
@@ -152,7 +153,7 @@
           <h3 class="mt-3" >No Reviews</h3>
         <% end %>
       </div>
-
+    </div>
 
 
     </div>
