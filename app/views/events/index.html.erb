@@ -39,18 +39,18 @@
             <div class="value"><%=event.organizer.skill_level%></div>
           </div>
           <div>
-            <div class="title">Matches</div>
-            <i class="fa fa-gamepad"></i>
-            <div class="value">27</div>
+            <div class="title">Events</div>
+            <i class="far fa-calendar"></i>
+            <div class="value"><%= event.organizer.events.count %></div>
           </div>
           <div>
-            <div class="title">Duration</div>
+            <div class="title">Participants</div>
             <i class="fa fa-group"></i>
-            <div class="value">3*H*</div>
+            <div class="value">???</div>
           </div>
           <div>
             <div class="title">Sport</div>
-            <i class="fa fa-coffee"></i>
+            <i class="fas fa-dumbbell"></i>
             <div class="value"><%=event.sport%></div>
           </div>
         </div>
@@ -59,6 +59,7 @@
     <div class="general">
       <h2><%= event.organizer.first_name %> <%= event.organizer.last_name %></h2>
       <p>I just want to play some <%=event.sport%></p>
+      <p>Start time: <%= event.start_time %></p>
       <span class="more">Mouse over the card for more info</span>
     </div>
   </div>
