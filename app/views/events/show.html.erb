@@ -7,8 +7,8 @@
     <div class="col-sm-6">
       <div class="mb-3" style="max-width: 50rem;">
        <div class="card-container mx-auto">
-        <% if current_user.photo.present? %>
-          <%= cl_image_tag current_user.photo.key, class: "round" %>
+        <% if @event.organizer.photo.present? %>
+          <%= cl_image_tag @event.organizer.photo.key, class: "round" %>
         <% else %>
           <img class="round" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" />
         <% end %>
