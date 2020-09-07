@@ -59,7 +59,8 @@
     <div class="general">
       <h2><%= event.organizer.first_name %> <%= event.organizer.last_name %></h2>
       <p>I just want to play some <%=event.sport%></p>
-      <p>Start time: <%= event.start_time %></p>
+      <p><i class="far fa-clock"></i> <%= event.start_time %></p>
+      <p><i class="fas fa-map-marker-alt"></i> <%= event.address %></p>
       <span class="more">Mouse over the card for more info</span>
     </div>
   </div>
