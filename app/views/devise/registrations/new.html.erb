@@ -62,6 +62,14 @@
 <%= f.input :language, input_html: { class: "recognitionStyling form-control mr-sm-2" }, prompt: "Language", collection: ["French", "English", "German", "Portugese", "Spanish"], label: "Language" %>
               </div>
             </div>
+              <div class="form-group">
+                  <%= f.input :description,
+                  required: true,
+                  autofocus: true,
+                  as: :text,
+                  hint: ("360 characters maximum"),
+                  input_html: { autocomplete: "description", rows: 3, class: "form-control", maxlength: 360 }%>
+              </div>
             <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn-primary btn-lg w-100" %>
             <p>Already have an account? Try to <%= render "devise/shared/links" %></p>
