@@ -12,6 +12,8 @@ require "open-uri"
 
 puts "Cleaning database..."
 
+Message.destroy_all
+Chatroom.destroy_all
 Booking.destroy_all
 Event.destroy_all
 User.destroy_all
@@ -26,12 +28,11 @@ cities = ["Lisbon", "Paris", "London"]
 
 
 4.times do
-user = User.new(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name:Faker::Name.last_name , age: rand(20..60), gender: gender.sample, language: language.sample, favorite_sport: sports.sample, description: Faker::Lorem.paragraph, skill_level: rand(1..5), password: "123456")
+user = User.new(email: Faker::Internet.email, first_name: Faker::Name.first_name, last_name:Faker::Name.last_name , age: rand(20..60), gender: gender.sample, language: language.sample, favorite_sport: sports.sample, description: Faker::Lorem.paragraph, skill_level: rand(1..5), password: "123456", nickname: Faker::Artist.name)
 user.save!
 end
 
 puts "Creating events..."
-
 
 
 6.times do
@@ -48,6 +49,13 @@ puts "Creating bookings..."
 6.times do
 booking = Booking.new(event_id: Event.all.sample.id, participant_id: User.all.sample.id)
 booking.save!
+end
+
+puts "Creating channels..."
+
+6.times do
+chatroom = Chatroom.new(name: Faker::IDNumber.valid)
+chatroom.save!
 end
 
 
