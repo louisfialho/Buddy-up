@@ -47,6 +47,7 @@
         <div class="card-product-infos">
            <h2><strong><%= my_booking.event.sport %></strong>
            <%= link_to content_tag(:i, nil, class: 'fas fa-window-close'), booking_path(my_booking), method: :delete, data: {confirm: 'Are you sure you no longer want to participate to this event?'}%>
+            <a href="<%=chatroom_path(my_booking)%>"><i class="far fa-comment-dots"></i></a>
            </h2>
            <p> Start time: <%= my_booking.event.start_time %> </p>
            <p> End time: <%= my_booking.event.end_time %> </p>
@@ -71,6 +72,7 @@
              <h2><strong><%= my_event.sport %></strong>
               <a href="<%=edit_event_path(my_event)%>"><i class="fas fa-edit"></i></a>
               <%= link_to content_tag(:i, nil, class: 'fas fa-trash'), event_path(my_event), method: :delete, data: {confirm: 'Are you sure you want to delete this event?'}%>
+              <a href="<%=chatroom_path(my_event)%>"><i class="far fa-comment-dots"></i></a>
              </h2>
              <p> Start time: <%= my_event.start_time %>  </p>
              <p> End time: <%= my_event.end_time %>  </p>
