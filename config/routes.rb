@@ -10,4 +10,8 @@ Rails.application.routes.draw do
 
 
   get "/dashboard", to: "pages#dashboard"
+
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+ end
 end

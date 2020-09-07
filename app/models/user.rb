@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :bookings, foreign_key: "participant_id"
   has_many :events, foreign_key: "organizer_id"
 
+  has_many :messages, dependent: :destroy
+
   # has_many :events, foreign_key: "organizer_id"
   # has_many :events
   has_many :reviewer_reviews, foreign_key: "reviewer_id", class_name: "Review"
