@@ -17,4 +17,6 @@ class User < ApplicationRecord
   # end
 
   has_many :reviewee_reviews, foreign_key: "reviewee_id", class_name: "Review"
+
+  has_one_attached :photo
 end
