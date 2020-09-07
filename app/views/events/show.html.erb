@@ -83,8 +83,18 @@
         <div class="card mb-3">
           <div class="card-body1">
             <h5 class="card-title"><strong>Active History</strong></h5>
-            <p>
-            <p class="card-text"><%=@event.organizer.description %></p>
+            <p> Events organized by <%=@event.organizer.first_name %></p>
+              <ul>
+                <% @event.organizer.events.each do |event| %>
+                  <li> Played <%= event.sport%> in <%= event.location %> on <%= event.start_time.to_formatted_s(:long_ordinal) %> </li>
+                <% end %>
+              </ul>
+            <p> Events <%=@event.organizer.first_name %> attended </p>
+              <ul>
+                <% @event.organizer.bookings.each do |booking| %>
+                  <li> Played <%= booking.event.sport%> in <%= booking.event.location %> on <%= booking.event.start_time.to_formatted_s(:long_ordinal) %> </li>
+                <% end %>
+              </ul>
           </div>
         </div>
       </div>
