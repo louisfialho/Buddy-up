@@ -45,10 +45,11 @@ document.addEventListener('turbolinks:load', () => {
   initUpdateNavbarOnScroll();
 });
 
-import {add_participants} from './booking'
-add_participants()
+import {add_participants} from './booking';
+add_participants();
 
 // import {save_booking} from './booking'
 // save_booking()
 
-
+import { noBadge } from '../components/navbar';
+noBadge();

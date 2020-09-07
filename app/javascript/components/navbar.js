@@ -11,4 +11,10 @@ const initUpdateNavbarOnScroll = () => {
   }
 }
 
+const noBadge = () => {
+  const element = document.getElementById("noBadge");
+  element.classList.remove("badge");
+}
+
+export { noBadge };
 export { initUpdateNavbarOnScroll };
