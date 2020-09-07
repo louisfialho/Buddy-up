@@ -18,6 +18,12 @@
                 autofocus: true,
                 input_html: { autocomplete: "last_name" }%>
               </div>
+               <div class="col-6 form-group">
+                   <%= f.input :nickname,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "nickname" }%>
+              </div>
             </div>
             <div class="form-group">
               <%= f.input :email,
