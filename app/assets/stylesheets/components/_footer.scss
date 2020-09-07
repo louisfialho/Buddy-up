@@ -9,8 +9,10 @@
   // margin-top: 20px;
   width: 100%;
   left: 0;
-  clear: both;
   bottom: 0;
+  position: relative;
+  margin-top: -100px;
+  clear: both;
 }
 
 .footer-links {
@@ -29,4 +31,8 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+#footer-container {
+  min-height: 100%;
 }
