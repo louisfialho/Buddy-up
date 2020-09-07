@@ -46,6 +46,11 @@ end
 
 puts "Creating bookings..."
 
+# Event.select(:organizer_id).map(&:organizer_id).uniq.each do |organizer|
+#   booking = Booking.new(event_id: Event.all.sample.id, participant_id: organizer)
+#   booking.save!
+# end
+
 6.times do
 booking = Booking.new(event_id: Event.all.sample.id, participant_id: User.all.sample.id)
 booking.save!
