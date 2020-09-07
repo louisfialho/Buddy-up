@@ -7,13 +7,15 @@
     <div class="col-sm-6">
       <div class="mb-3" style="max-width: 50rem;">
        <div class="card-container mx-auto">
-        <!-- <span class="pro">You</span> -->
-        <img class="round" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" />
+        <% if current_user.photo.present? %>
+          <%= cl_image_tag current_user.photo.key, class: "round" %>
+        <% else %>
+          <img class="round" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" />
+        <% end %>
         <br>
         <br>
         <h4><%= @event.organizer.first_name %> <%= @event.organizer.last_name %></h4>
         <div class="profile-details">
-          <p>E-mail: <%= @event.organizer.email %></p>
           <p>Gender: <%= @event.organizer.gender %></p>
           <p>Age: <%= @event.organizer.age %></p></p>
           <p>Main Language: <%= @event.organizer.language %></p>
