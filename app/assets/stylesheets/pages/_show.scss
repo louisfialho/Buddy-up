@@ -1,11 +1,10 @@
-
 .show-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 300px;
   padding-right: 300px;
-  padding-top: 50px;
+  padding-top: 30px;
 }
 
 .flex-wrap-center {
@@ -21,6 +20,10 @@
   padding: 30px;
   width: 350px;
   margin: 0 auto;
+}
+
+.show-details {
+  margin-top: 13px;
 }
 
 .prompt {
