@@ -16,7 +16,11 @@
         <div class="points center">
          <%= link_to "Select Buddy", event_path(event), class: "btn", id:"btn-event"%>
         </div>
-        <img class="mx-auto center" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+        <% if event.organizer.photo.present? %>
+          <%= cl_image_tag event.organizer.photo.key, class: "mx-auto center" %>
+        <% else %>
+          <img class="mx-auto center" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+        <% end %>
       </div>
       <div class="more-info">
         <h2><%= event.organizer.first_name %> <%= event.organizer.last_name %></h2>
