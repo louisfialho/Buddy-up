@@ -67,7 +67,7 @@
 </div>
 </div>
 
-<div class="row">
+<div class="row show-details">
 
     <div class="col-6">
         <div class="card mb-3" >
@@ -94,6 +94,8 @@
       <!-- reviews -->
 
       <!-- review form visible to only participants who have booked onto the event-->
+        <div class="form-row">
+          <div class="col-6 form-group">
         <% if @event.bookings.where(participant_id: current_user.id).first.present? && (current_user.id ==   @event.bookings.where(participant_id: current_user.id).first.participant.id)  %>
           <%= simple_form_for([@event, @review], remote: true) do |f| %>
             <%= f.input :rating, collection: 0..5, label: "Leave a Rating"%>
@@ -101,6 +103,8 @@
             <%= f.submit class: 'btn btn-primary' %>
           <% end %>
         <% end %>
+      </div>
+    </div>
       <!-- list the reviews -->
       <div  id="anchor" class='list-group thin-border-top mt-5 mb-3'>
         <% if @event.reviews.count != 0 %>
