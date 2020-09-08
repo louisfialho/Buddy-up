@@ -65,7 +65,13 @@
                   <h5 class="card-title">Participants</h5>
                     <ul class="no-bullets" style="list-style: none;">
                       <% @event.bookings.each do |booking| %>
-                        <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %>, <%= booking.participant.last_name %>, <%= booking.participant.age %>, <%= booking.participant.gender %> </li>
+                        <% if booking.participant.photo.present? %>
+                          <li><a href="<%= user_path(booking.participant) %>"><%= cl_image_tag booking.participant.photo.key, class: "review-avatar" %> </a></li>
+                          <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %></li>
+                        <% else %>
+                         <a href="<%= user_path(booking.participant) %>"><img class="review-avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" /> </a>
+                         <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %></li>
+                        <% end %>
                       <% end %>
                     </ul>
             </div>
@@ -133,7 +139,11 @@
             <li class="review-card list-group-item mt-3">
               <div class="review-content mt-3">
                 <!-- Reviewer avatar -->
-                <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "review-avatar" %>
+                <% if review.reviewer.photo.present? %>
+                  <%= cl_image_tag review.reviewer.photo.key, class: "review-avatar" %>
+                <% else %>
+                  <img class="review-avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" />
+                <% end %>
                 <!-- Reviewer name -->
                 <div class="pl-2">
                   <div>
