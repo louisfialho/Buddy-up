@@ -96,6 +96,12 @@ footer{
   }
 }
 
+// .review-content {
+//   &.active {
+//     display: block;
+//   }
+// }
+
 .tab__content{
   background-color: white;
   position: relative;
@@ -130,9 +136,9 @@ footer{
   }
 
   img{
-    width: 100%;
+    width: 20%;
     height: auto;
-    border-radius: 5px;
+    border-radius: 50%;
   }
 }
 
@@ -171,3 +177,4 @@ footer{
 .centering-content {
   margin: auto;
 }
+

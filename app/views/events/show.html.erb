@@ -135,11 +135,12 @@
           <!-- stop undoing now when you start seeing this disappear. Keep on eye on me. LOOOKKKKK ATTT MEEEEE -->
           <!-- watch me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
           <!-- list the reviews -->
-          <div  id="anchor" class=' mt-2 mb-3'>
+          <div id="anchor" class=' mt-2 mb-3'>
             <div class="col-6 form-group  centering-content">
               <% if @event.reviews.count != 0 %>
                 <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
                 <% @event.reviews.reverse.each do |review| %>
+                  <ul>
                   <li class="review-card list-group-item mt-3">
                     <div class="review-content mt-3">
                       <!-- Reviewer avatar -->
@@ -177,6 +178,7 @@
                     <!-- Review text -->
                     <p><%= review.text %></p>
                   </li>
+                  </ul>
                 <% end %>
               <% else %>
                 <h3 class="mt-3" >No Reviews</h3>
@@ -189,6 +191,8 @@
       </li>
     </ul>
   </section>
+
+
 
 
 </div>
