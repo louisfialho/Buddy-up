@@ -136,12 +136,12 @@
           <!-- watch me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
           <!-- list the reviews -->
           <div id="anchor" class=' mt-2 mb-3'>
-            <div class="col-6 form-group  centering-content">
+            <div class="col-12">
               <% if @event.reviews.count != 0 %>
                 <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
                 <% @event.reviews.reverse.each do |review| %>
-                  <ul>
-                  <li class="review-card list-group-item mt-3">
+                  <ul style="list-style: none;">
+                  <li class="review-card mt-3">
                     <div class="review-content mt-3">
                       <!-- Reviewer avatar -->
                       <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "review-avatar" %>
