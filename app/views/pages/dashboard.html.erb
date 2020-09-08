@@ -112,11 +112,12 @@
 
 
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-       <div class="cards">
-      <%= link_to "Create", new_event_path , class: "btn btn-ghost" %>
+       <%= link_to "Create", new_event_path , class: "btn btn-ghost" %>
+
        <% if @my_events.empty? %>
         <p> You haven't organized any event yet </p>
        <% else %>
+       <div class="cards1">
         <% @my_events.each do |my_event| %>
           <div class="card card-event">
     <div class="additional">
@@ -140,19 +141,19 @@
           <span><%= my_event.organizer.gender %></span>
         </div>
         <div class="coords">
-          <span>Favourite Sport: <%= event.organizer.favorite_sport %></span>
-          <span>Age: <%= event.organizer.age %></span>
+          <span>Favourite Sport: <%= my_event.organizer.favorite_sport %></span>
+          <span>Age: <%= my_event.organizer.age %></span>
         </div>
         <div class="stats">
           <div>
             <div class="title">Skill</div>
             <i class="fa fa-trophy"></i>
-            <div class="value"><%=event.organizer.skill_level%></div>
+            <div class="value"><%=my_event.organizer.skill_level%></div>
           </div>
           <div>
             <div class="title">Events</div>
             <i class="far fa-calendar"></i>
-            <div class="value"><%= event.organizer.events.count %></div>
+            <div class="value"><%= my_event.organizer.events.count %></div>
           </div>
           <div>
             <div class="title">Participants</div>
@@ -162,22 +163,21 @@
           <div>
             <div class="title">Sport</div>
             <i class="fas fa-dumbbell"></i>
-            <div class="value"><%=event.sport%></div>
+            <div class="value"><%=my_event.sport%></div>
           </div>
         </div>
       </div>
     </div>
     <div class="general">
-      <h2><%= event.organizer.first_name %> <%= event.organizer.last_name %></h2>
-      <p>I just want to play some <%=event.sport%></p>
-      <p>Start time: <%= event.start_time %></p>
+      <h2><%= my_event.organizer.first_name %> <%= my_event.organizer.last_name %></h2>
+      <p>I just want to play some <%=my_event.sport%></p>
+      <p>Start time: <%= my_event.start_time %></p>
       <span class="more">Mouse over the card for more info</span>
     </div>
   </div>
 <% end %>
 </div>
           <% end %>
-        <% end %>
           </div>
     </div>
   </div>
