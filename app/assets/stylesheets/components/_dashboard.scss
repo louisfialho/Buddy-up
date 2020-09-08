@@ -5,7 +5,14 @@
   box-sizing: border-box;
 }
 
-
+.cards1 {
+    display: flex;
+  // grid-template-columns: 1fr 1fr;
+  grid-gap: 26px;
+  margin: 0px;
+ // take this out if you want to have more than one
+  flex-wrap: wrap;
+}
 
 h3 {
   margin: 10px 0;

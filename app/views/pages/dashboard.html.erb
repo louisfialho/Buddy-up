@@ -41,37 +41,76 @@
       </div>
 
 
-
-
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
        <br>
-      <div class="cards">
 
     <% if @my_bookings.empty? %>
       <p> You have no event planned </p>
     <% else %>
-      <% @my_bookings.each do |my_booking| %>
-        <div class="card-product">
-          <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"/>
-          <div class="card-product-infos">
-             <h2><strong><%= my_booking.event.sport %></strong>
-             <%= link_to content_tag(:i, nil, class: 'fas fa-window-close'), booking_path(my_booking), method: :delete, data: {confirm: 'Are you sure you no longer want to participate to this event?'}%>
-              <a href="<%=chatroom_path(my_booking)%>"><i class="far fa-comment-dots"></i></a>
-             </h2>
-             <p> Start time: <%= my_booking.event.start_time %> </p>
-             <p> End time: <%= my_booking.event.end_time %> </p>
-             <p> Address: <%= my_booking.event.address %> </p>
-             <p> Organizer: <%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %> </p>
-             <br>
-             <div class="text-right">
-               <%= link_to "See details", event_path(my_booking.event), class: "btn btn-ghost"%>
-             </div>
-          </div>
-          </div>
-        <% end %>
-      <% end %>
+    <div class="cards1 justify-content-center">
+    <% @my_bookings.each do |my_booking| %>
+        <div class="card card-event">
+    <div class="additional">
+      <div class="user-card">
+        <div class="level center">
+          <%= my_booking.event.sport %>
         </div>
+        <div class="points center">
+         <%= link_to "See Details", event_path(my_booking.event), class: "btn", id:"btn-event"%>
+        </div>
+        <% if my_booking.event.organizer.photo.present? %>
+          <%= cl_image_tag my_booking.event.organizer.photo.key, class: "mx-auto center" %>
+        <% else %>
+          <img class="mx-auto center" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+        <% end %>
+      </div>
+      <div class="more-info">
+        <h2><%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %></h2>
+        <div class="coords">
+          <span>Main-Language: <%= my_booking.event.organizer.language %></span>
+          <span><%= my_booking.event.organizer.gender %></span>
+        </div>
+        <div class="coords">
+          <span>Favourite Sport: <%= my_booking.event.organizer.favorite_sport %></span>
+          <span>Age: <%= my_booking.event.organizer.age %></span>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="title">Skill</div>
+            <i class="fa fa-trophy"></i>
+            <div class="value"><%=my_booking.event.organizer.skill_level%></div>
+          </div>
+          <div>
+            <div class="title">Events</div>
+            <i class="far fa-calendar"></i>
+            <div class="value"><%= my_booking.event.organizer.events.count %></div>
+          </div>
+          <div>
+            <div class="title">Participants</div>
+            <i class="fa fa-group"></i>
+            <div class="value">???</div>
+          </div>
+          <div>
+            <div class="title">Sport</div>
+            <i class="fas fa-dumbbell"></i>
+            <div class="value"><%=my_booking.event.sport%></div>
+          </div>
+        </div>
+      </div>
     </div>
+    <div class="general">
+      <h2><%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %></h2>
+      <p>I just want to play some <%=my_booking.event.sport%></p>
+      <p>Start time: <%= my_booking.event.start_time %></p>
+      <span class="more">Mouse over the card for more info</span>
+    </div>
+  </div>
+<% end %>
+</div>
+      <%end%>
+    </div>
+
+
     <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
        <div class="cards">
       <%= link_to "Create", new_event_path , class: "btn btn-ghost" %>
@@ -79,23 +118,64 @@
         <p> You haven't organized any event yet </p>
        <% else %>
         <% @my_events.each do |my_event| %>
-          <div class="card-product">
-            <%= cl_image_tag my_event.photo.key, height: 150, width: 150, crop: :fill %>
-            <div class="card-product-infos">
-               <h2><strong><%= my_event.sport %></strong>
-                <a href="<%=edit_event_path(my_event)%>"><i class="fas fa-edit"></i></a>
-                <%= link_to content_tag(:i, nil, class: 'fas fa-trash'), event_path(my_event), method: :delete, data: {confirm: 'Are you sure you want to delete this event?'}%>
-                <a href="<%=chatroom_path(my_event)%>"><i class="far fa-comment-dots"></i></a>
-               </h2>
-               <p> Start time: <%= my_event.start_time %>  </p>
-               <p> End time: <%= my_event.end_time %>  </p>
-               <p> Address: <%= my_event.address %> </p>
-               <br>
-               <div class="text-right">
-                 <%= link_to "See details", event_path(my_event), class: "btn btn-ghost"%>
-               </div>
-            </div>
-            </div>
+          <div class="card card-event">
+    <div class="additional">
+      <div class="user-card">
+        <div class="level center">
+          <%= my_event.sport %>
+        </div>
+        <div class="points center">
+         <%= link_to "See Details", event_path(my_event), class: "btn", id:"btn-event"%>
+        </div>
+        <% if my_event.organizer.photo.present? %>
+          <%= cl_image_tag my_event.organizer.photo.key, class: "mx-auto center" %>
+        <% else %>
+          <img class="mx-auto center" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
+        <% end %>
+      </div>
+      <div class="more-info">
+        <h2><%= my_event.organizer.first_name %> <%= my_event.organizer.last_name %></h2>
+        <div class="coords">
+          <span>Main-Language: <%= my_event.organizer.language %></span>
+          <span><%= my_event.organizer.gender %></span>
+        </div>
+        <div class="coords">
+          <span>Favourite Sport: <%= event.organizer.favorite_sport %></span>
+          <span>Age: <%= event.organizer.age %></span>
+        </div>
+        <div class="stats">
+          <div>
+            <div class="title">Skill</div>
+            <i class="fa fa-trophy"></i>
+            <div class="value"><%=event.organizer.skill_level%></div>
+          </div>
+          <div>
+            <div class="title">Events</div>
+            <i class="far fa-calendar"></i>
+            <div class="value"><%= event.organizer.events.count %></div>
+          </div>
+          <div>
+            <div class="title">Participants</div>
+            <i class="fa fa-group"></i>
+            <div class="value">???</div>
+          </div>
+          <div>
+            <div class="title">Sport</div>
+            <i class="fas fa-dumbbell"></i>
+            <div class="value"><%=event.sport%></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="general">
+      <h2><%= event.organizer.first_name %> <%= event.organizer.last_name %></h2>
+      <p>I just want to play some <%=event.sport%></p>
+      <p>Start time: <%= event.start_time %></p>
+      <span class="more">Mouse over the card for more info</span>
+    </div>
+  </div>
+<% end %>
+</div>
           <% end %>
         <% end %>
           </div>
