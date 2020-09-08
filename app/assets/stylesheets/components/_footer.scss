@@ -11,7 +11,7 @@
   left: 0;
   clear: both;
   bottom: 0;
-  position: relative;
+  // margin-top: -100px;
 }
 
 .footer-links {
@@ -32,6 +32,8 @@
   color: #D23333;
 }
 
-#footer-container {
-  min-height: 100%;
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
 }
