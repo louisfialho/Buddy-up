@@ -65,7 +65,7 @@
                   <h5 class="card-title">Participants</h5>
                     <ul class="no-bullets" style="list-style: none;">
                       <% @event.bookings.each do |booking| %>
-                        <li> <%= booking.participant.first_name %>, <%= booking.participant.last_name %>, <%= booking.participant.age %>, <%= booking.participant.gender %> </li>
+                        <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %>, <%= booking.participant.last_name %>, <%= booking.participant.age %>, <%= booking.participant.gender %> </li>
                       <% end %>
                     </ul>
             </div>
