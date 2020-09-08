@@ -1,0 +1,22 @@
+.notification {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+  border-radius: 1px;
+  font-size: 14px;
+}
+
+.notification:hover {
+
+}
+
+.notification .badge {
+  position: absolute;
+  top: -26px;
+  right: -2px;
+  padding: 4px 7px;
+  border-radius: 50%;
+  background: rgb(94, 211, 255);
+  color: white;
+}
