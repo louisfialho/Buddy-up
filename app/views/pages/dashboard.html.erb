@@ -18,7 +18,7 @@
       <div class="card-container">
         <!-- <span class="pro">You</span> -->
         <% if current_user.photo.present? %>
-            <%= cl_image_tag current_user.photo.key, class: "round"%>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-profile round"%>
         <% else %>
         <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
         <% end %>
