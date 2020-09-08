@@ -33,7 +33,7 @@
         <div class="row justify-content-center">
           <div class="text-center">
 
-            <div class="form-container">
+            <div class="event-show-container">
 
             <p class="prompt"> Book this event! </p>
 
@@ -50,14 +50,14 @@
               <div class="flex-between" id="participants">
                 Participants:
                 <div class="actions">
-                  <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
+                  <a class="btn round-bordered incrementer" id="minus" data-offset="-1">-</a>
                   <span id="counter" data-count="1">1</span>
-                  <a href="#" onsubmit="return false;" class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
+                  <a class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
                 </div>
               </div>
 
               <%= simple_form_for [@event, @booking] do |f| %>
-                <%= f.submit "Book event", class:"btn-primary" %>
+                <%= f.submit "Book event", class:"btn btn-primary btn-lg w-100"%>
               <% end %>
 
             </div>
