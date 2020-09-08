@@ -90,23 +90,23 @@
       <li class="active">
         <div class="content__wrapper">
   <!--         <h2 class="text-color">Biogrpahy</h2> -->
-          <p class="card-text"><%=@event.organizer.description %></p>
+          <p><%=@event.organizer.description %></p>
         </div>
       </li>
       <li>
         <div class="content__wrapper">
   <!--         <h2 class="text-color">Activity History</h2> -->
-          <p> Events organized by <%=@event.organizer.first_name %></p>
-          <ul>
+          <h6> Events organized by <%=@event.organizer.first_name %></h6>
+          <ul style="list-style: none;">
             <% @event.organizer.events.each do |event| %>
               <li> Organized <%= event.sport%> session in <%= event.location %> on <%= event.start_time.to_formatted_s(:long_ordinal) %> </li>
             <% end %>
           </ul>
-          <p> Events <%=@event.organizer.first_name %> attended </p>
+          <h6  class="pt-3" > Events <%=@event.organizer.first_name %> attended </h6>
           <% if @event.organizer.bookings.empty? %>
             <p><i> <%=@event.organizer.first_name %> did not attend any event yet </i></p>
           <% else %>
-            <ul>
+            <ul style="list-style: none;">
               <% @event.organizer.bookings.each do |booking| %>
                 <li> Played <%= booking.event.sport%> in <%= booking.event.location %> on <%= booking.event.start_time.to_formatted_s(:long_ordinal) %> </li>
               <% end %>
@@ -135,7 +135,6 @@
             </div>
           </div>
             <!-- list the reviews -->
-            <p>Overall Rating: </p>
             <div  id="anchor" class='list-group thin-border-top mt-2 mb-3'>
               <div class="col-6 form-group">
               <% if @event.reviews.count != 0 %>
