@@ -3,7 +3,7 @@
   <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
     <% @chatroom.messages.each do |message| %>
        <div class="container20" id="message-<%= message.id %>">
-         <%= cl_image_tag message.user.photo.key, class: "avatar" %>
+         <%= cl_image_tag message.user.photo.key %>
          <span class="time-left"><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
          <br>
          <span><%= message.user.nickname %>:</span>
