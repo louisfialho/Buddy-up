@@ -26,22 +26,35 @@
       <ul class="navbar-nav mr-auto">
         <% if user_signed_in? %>
           <li class="nav-item dropdown">
-            <!-- notification icon dropdown -->
-            <%= image_tag "bell-solid.svg", class: "dropdown-toggle", id: "navbarDropdown2", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown2">
               <!-- do a loop here to repeat a link_to for however many events that have finished -->
               <% if current_user.bookings.empty? == true %>
                 <div class="notification-dropdown">no updates</div>
               <% else %>
+                <% sum = 0 %>
                 <% current_user.bookings.each do |booking| %>
                   <% if booking.event.end_time < Time.now  %>
                     <% f_name = User.find_by(id:booking.event.organizer_id).first_name %>
                     <% l_name = User.find_by(id:booking.event.organizer_id).last_name %>
                     <%= link_to "Review #{f_name} #{l_name} (#{booking.event.sport})", event_path(booking.event), class: "dropdown-item" %>
                   <% end %>
+                <% sum += 1 %>
                 <% end %>
               <% end %>
             </div>
+            <!-- notification icon dropdown -->
+            <%= image_tag "bell-solid.svg", class: "dropdown-toggle", id: "navbarDropdown2", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <a class="notification">
+              <span id="noBadge" class="badge">
+                <!-- increase the badge number each time a new review is added -->
+                <% unless sum == nil %>
+                  <%= sum %>
+                <% else %>
+                  0
+                <% end %>
+              </span>
+            </a>
           </li>
           <!-- messages tab -->
           <li class="nav-item">
@@ -56,7 +69,7 @@
             <% end %>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
               <%= link_to "My Dashboard", dashboard_path, class: "dropdown-item" %>
-              <%= link_to "Account settings", edit_user_registration_path(current_user), class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
@@ -70,4 +83,3 @@
 
   </div>
 </div>
-
