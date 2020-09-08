@@ -111,11 +111,15 @@
         <div class="card mb-3">
           <div class="card-body1">
             <h5 class="card-title"><strong>Participants</strong></h5>
-              <ul>
-                <% @event.bookings.each do |booking| %>
-                  <li> <%= booking.participant.first_name %>, <%= booking.participant.last_name %>, <%= booking.participant.age %>, <%= booking.participant.gender %> </li>
-                <% end %>
-              </ul>
+              <% if @event.bookings.empty? %>
+                <p>There is no participant yet</p>
+              <% else %>
+                <ul>
+                  <% @event.bookings.each do |booking| %>
+                    <li> <%= booking.participant.first_name %>, <%= booking.participant.last_name %>, <%= booking.participant.age %>, <%= booking.participant.gender %> </li>
+                  <% end %>
+                </ul>
+              <% end %>
           </div>
         </div>
       </div>
