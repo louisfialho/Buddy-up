@@ -51,5 +51,5 @@ add_participants();
 // import {save_booking} from './booking'
 // save_booking()
 
-import {eventsTabs} from '../components/navbar';
+import { eventsTabs } from '../components/events-tabs';
 eventsTabs();
