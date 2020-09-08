@@ -3,18 +3,20 @@ body {
 }
 
 .card-participants {
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   border-radius: 4px;
   transition: 1s;
   background-color: #EEF5F6
+
   h5 {
     margin-top: 9px;
   }
-
-  :hover {
-    background-color: white;
-  }
 }
+
+.card-participants:hover {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
 
 .card-regist {
   width: 550px;
