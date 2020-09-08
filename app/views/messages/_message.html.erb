@@ -1,7 +1,8 @@
-<div class="message-container" id="message-<%= message.id %>">
-  <i class="author">
-    <span><%= message.user.nickname %></span>
-    <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
-  </i>
-  <p><%= message.content %></p>
+
+<div class="message-container container20" id="message-<%= message.id %>">
+           <%= cl_image_tag message.user.photo.key, class: "avatar" %>
+           <span class="time-left"><small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small></span>
+           <br>
+           <span><%= message.user.nickname %>:</span>
+           <p><%= message.content %></p>
 </div>
