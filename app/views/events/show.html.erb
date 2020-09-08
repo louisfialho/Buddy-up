@@ -62,15 +62,13 @@
 
             </div>
             <div class="card card-participants mt-4">
-                  <h5 class="card-title">Participants</h5>
-                    <ul class="no-bullets" style="list-style: none;">
+                  <h5 class="card-title mt-3">Participants</h5>
+                    <ul class="no-bullets list-group list-group-horizontal justify-content-around mb-2 mt-1" style="list-style: none;">
                       <% @event.bookings.each do |booking| %>
                         <% if booking.participant.photo.present? %>
-                          <li><a href="<%= user_path(booking.participant) %>"><%= cl_image_tag booking.participant.photo.key, class: "review-avatar" %> </a></li>
-                          <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %></li>
+                          <li><a href="<%= user_path(booking.participant) %>"><%= cl_image_tag booking.participant.photo.key, class: "review-avatar " %> </a></li>
                         <% else %>
-                         <a href="<%= user_path(booking.participant) %>"><img class="review-avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" /> </a>
-                         <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %></li>
+                         <a href="<%= user_path(booking.participant) %>"><img class="mb-3 mt-3 review-avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" /> </a>
                         <% end %>
                       <% end %>
                     </ul>
