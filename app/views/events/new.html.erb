@@ -15,13 +15,22 @@
               <%= f.input :start_time,
                 as: :datetime,
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                html5: true, input_html: { type: "datetime-local" }, label: "From"
+                %>
             </div>
             <div class="form-group">
               <%= f.input :end_time,
                 as: :datetime,
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                html5: true, input_html: { type: "datetime-local" }, label: "Until" %>
+            </div>
+            <div class="form-group">
+              <%= f.input :location,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "location" }%>
             </div>
             <div class="form-group">
               <%= f.input :address,
