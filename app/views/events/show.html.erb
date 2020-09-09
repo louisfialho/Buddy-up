@@ -224,4 +224,4 @@
 <!-- app/views/offers/show.html.erb -->
 <% content_for :meta_title, "#{@event.sport}" %>
 <% content_for :meta_description, @event.location %>
-<% content_for :meta_image, cl_image_path(@event.organizer.photo.path) %>
+<% content_for :meta_image, cl_image_path(@event.organizer.photo) %>
