@@ -26,10 +26,24 @@ require("channels")
 import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initChatroomCable } from "../channels/chatroom_channel";
+import { initUpdateNavbarOnScroll } from '../components/navbar';
+import {add_participants} from './booking';
+import { eventsTabs } from '../components/events-tabs';
 
 document.addEventListener('turbolinks:load', () => {
-  initMapbox();
+  if (document.querySelector(".events-index")) {
+    initMapbox();
+  }
+
+  if (document.querySelector(".events-show")) {
+    eventsTabs();
+    add_participants();
+  }
+
+
   initChatroomCable();
+  initUpdateNavbarOnScroll();
+
 })
 
 // if !Turbolinks?
@@ -40,19 +54,13 @@ document.addEventListener('turbolinks:load', () => {
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
-import { initUpdateNavbarOnScroll } from '../components/navbar';
 
-document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
-  // initSelect2();
-  initUpdateNavbarOnScroll();
-});
 
-import {add_participants} from './booking';
-add_participants();
+
+
 
 // import {save_booking} from './booking'
 // save_booking()
 
-import { eventsTabs } from '../components/events-tabs';
-eventsTabs();
+
+
