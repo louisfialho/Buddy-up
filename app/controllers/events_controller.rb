@@ -10,6 +10,7 @@ class EventsController < ApplicationController
 
   def destroy
     @event = Event.find(params[:id])
+    @event.bookings.destroy_all
     @event.destroy
     redirect_to dashboard_path
   end

@@ -124,10 +124,12 @@
     <div class="additional">
       <div class="user-card">
         <div class="level center">
-          <%= my_event.sport %> <a href="<%=chatroom_path(my_event.bookings.first.chatroom)%>"><i class="far fa-comment-dots"></i></a>
-          <a href="<%=chatroom_path(my_booking)%>"><i class="far fa-comment-dots"></i></a>
+          <%= my_event.sport %>
+          <% if my_event.bookings.present? %>
+              <a href="<%=chatroom_path(my_event.bookings.first.chatroom)%>"><i class="far fa-comment-dots"></i></a>
+          <% end %>
           <a href="<%=edit_event_path(my_event)%>"><i class="fas fa-edit"></i></a>
-          <%= link_to content_tag(:i, nil, class: 'fas fa-window-close'), booking_path(my_booking), method: :delete, data: {confirm: 'Are you sure you no longer want to participate to this event?'}%>
+          <%= link_to content_tag(:i, nil, class: 'fas fa-window-close'), event_path(my_event.id), method: :delete, data: {confirm: 'Are you sure you want to delete your event?'}%>
         </div>
         <div class="points center">
          <%= link_to "See Details", event_path(my_event), class: "btn", id:"btn-event"%>
