@@ -1,0 +1,5 @@
+meta_product_name: "BuddyUp"
+meta_title: "BuddyUp - Find buddies to practice your favorite sport"
+meta_description: "BuddyUp is a platform that helps you find buddies to practice your favorite sport"
+meta_image: "BuddyUp.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
