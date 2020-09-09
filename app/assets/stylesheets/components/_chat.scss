@@ -1,0 +1,63 @@
+/* Chat containers */
+.container20 {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 25px;
+  padding: 10px;
+  margin: 10px 0;
+  width: 80%;
+}
+
+.container20 p {
+  font-style: italic;
+}
+
+/* Style images */
+.container20 img {
+  float: left;
+  max-width: 60px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 50%;
+}
+
+/* Style the right image */
+.container20 img.right {
+  float: right;
+  margin-left: 20px;
+  margin-right:0;
+}
+
+/* Style time text */
+.time-left {
+  float: left;
+  color: #999;
+}
+
+
+.class1{
+  width: 770px;
+}
+
+.chat-submit {
+  margin-left: 5px;
+  padding: 5px 10px;
+  height: 40px;
+  color: #36D3FF;
+  border: 1px solid #4A4A4A;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  border-color: #36D3FF;
+  background-color: white;
+}
+
+.chat-submit:hover {
+  opacity: 1;
+  color: white;
+  background-color: #36D3FF;
+}
+
+
+

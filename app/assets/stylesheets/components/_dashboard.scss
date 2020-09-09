@@ -102,7 +102,11 @@ background-image: radial-gradient(circle at 13% 47%, rgba(140, 140, 140,0.03) 0%
   margin-left: 16px;
 }
 
-
+.avatar-profile {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
 
 
 

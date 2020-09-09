@@ -50,22 +50,26 @@
               <div class="flex-between" id="participants">
                 Participants:
                 <div class="actions">
-                  <a class="btn round-bordered incrementer minus" data-offset="-1">-</a>
+                  <a class="btn round-bordered incrementer" id="minus" data-offset="-1">-</a>
                   <span id="counter" data-count="1">1</span>
-                  <a href="#" onsubmit="return false;" class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
+                  <a class="btn round-bordered incrementer" id="plus" data-offset="1">+</a>
                 </div>
               </div>
 
               <%= simple_form_for [@event, @booking] do |f| %>
-                <%= f.submit "Book event", class:"btn-primary" %>
+                <%= f.submit "Book event", class:"btn btn-primary btn-lg w-100", id:"book"%>
               <% end %>
 
             </div>
-            <div class="form-container mt-3">
-                  <h5 class="card-title">Participants</h5>
-                    <ul class="no-bullets" style="list-style: none;">
+            <div class="card card-participants mt-4">
+                  <h5 class="card-title mt-3">Participants</h5>
+                    <ul class="no-bullets list-group list-group-horizontal justify-content-around mb-2 mt-1" style="list-style: none;">
                       <% @event.bookings.each do |booking| %>
-                        <li> <%= link_to booking.participant.first_name, user_path(booking.participant) %>, <%= booking.participant.last_name %>, <%= booking.participant.age %>, <%= booking.participant.gender %> </li>
+                        <% if booking.participant.photo.present? %>
+                          <li><a href="<%= user_path(booking.participant) %>"><%= cl_image_tag booking.participant.photo.key, class: "review-avatar " %> </a></li>
+                        <% else %>
+                         <a href="<%= user_path(booking.participant) %>"><img class="mb-3 mt-3 review-avatar" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" /> </a>
+                        <% end %>
                       <% end %>
                     </ul>
             </div>
@@ -124,9 +128,7 @@
           <div class="centering-content form-group col-6">
             <% if @event.bookings.where(participant_id: current_user.id).first.present? && (current_user.id ==   @event.bookings.where(participant_id: current_user.id).first.participant.id)  %>
               <%= simple_form_for([@event, @review], remote: true) do |f| %>
-
-                 <%= f.input :rating, collection: 0..5, label: "Leave a Rating"%>
-
+                <%= f.input :rating, collection: 0..5, label: "Leave a Rating"%>
                 <%= f.input :text, label:"Leave a Review" %>
                 <%= f.submit class: 'btn btn-primary' %>
               <% end %>
@@ -136,7 +138,9 @@
           <!-- watch me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
           <!-- list the reviews -->
           <div id="anchor" class=' mt-2 mb-3'>
-            <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
+            <% unless @event.reviews.count == 0 %>
+              <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
+            <% end %>
             <div class="col-12 review-design">
               <% if @event.reviews.count != 0 %>
                 <% @event.reviews.reverse.each do |review| %>
@@ -144,9 +148,9 @@
                   <li class="review-card mt-3 mb-4 pb-4 d-flex justify-content-center">
                     <div class="review-content m-0 pl-4" style="width:20%" >
                       <!-- Reviewer avatar -->
-                      <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "review-avatar", width: "100%" %>
+                      <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "review-avatar-events-tabs", width: "100%" %>
                     </div>
-                    <div class="col-4 mt-2 align-self-center">
+                    <div class="col-4 align-self-center">
                       <!-- Review Rating content-->
                       <small>
                         <div>
@@ -176,7 +180,7 @@
                           <% count += 1 %>
                         <% end %>
                         <!-- Review text -->
-                        <p><%= review.text %></p>
+                        <p class="mb-0"><%= review.text %></p>
                       </small>
 
                     </div>
@@ -189,7 +193,6 @@
             </div>
           </div>
           <!-- review end -->
-
         </div>
       </li>
     </ul>

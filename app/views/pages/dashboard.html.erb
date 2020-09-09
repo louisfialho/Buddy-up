@@ -18,7 +18,7 @@
       <div class="card-container">
         <!-- <span class="pro">You</span> -->
         <% if current_user.photo.present? %>
-            <%= cl_image_tag current_user.photo.key, class: "round"%>
+            <%= cl_image_tag current_user.photo.key, class: "avatar-profile round"%>
         <% else %>
         <img class="round" src="https://randomuser.me/api/portraits/women/79.jpg" alt="user" />
         <% end %>
@@ -53,7 +53,7 @@
     <div class="additional">
       <div class="user-card">
         <div class="level center">
-          <%= my_booking.event.sport %>
+          <%= my_booking.event.sport %> <a href="<%=chatroom_path(my_booking.chatroom)%>"><i class="far fa-comment-dots"></i></a>
         </div>
         <div class="points center">
          <%= link_to "See Details", event_path(my_booking.event), class: "btn", id:"btn-event"%>
@@ -123,7 +123,7 @@
     <div class="additional">
       <div class="user-card">
         <div class="level center">
-          <%= my_event.sport %>
+          <%= my_event.sport %><a href="<%=chatroom_path(my_event.bookings.first.chatroom)%>"><i class="far fa-comment-dots"></i></a>
         </div>
         <div class="points center">
          <%= link_to "See Details", event_path(my_event), class: "btn", id:"btn-event"%>

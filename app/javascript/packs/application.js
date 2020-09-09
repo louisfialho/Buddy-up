@@ -32,6 +32,9 @@ document.addEventListener('turbolinks:load', () => {
   initChatroomCable();
 })
 
+// if !Turbolinks?
+//   location.reload
+// Turbolinks.dispatch("turbolinks:load")
 // = require datetime_picker_input
 
 // Internal imports, e.g:
