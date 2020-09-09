@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_07_094834) do
+ActiveRecord::Schema.define(version: 2020_09_09_094547) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_09_07_094834) do
     t.bigint "event_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "chatroom_id", null: false
+    t.index ["chatroom_id"], name: "index_bookings_on_chatroom_id"
     t.index ["event_id"], name: "index_bookings_on_event_id"
     t.index ["participant_id"], name: "index_bookings_on_participant_id"
   end
@@ -108,6 +110,7 @@ ActiveRecord::Schema.define(version: 2020_09_07_094834) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bookings", "chatrooms"
   add_foreign_key "bookings", "events"
   add_foreign_key "bookings", "users", column: "participant_id"
   add_foreign_key "events", "users", column: "organizer_id"
