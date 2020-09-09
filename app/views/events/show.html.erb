@@ -136,15 +136,19 @@
           <!-- watch me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
           <!-- list the reviews -->
           <div id="anchor" class=' mt-2 mb-3'>
-            <div class="col-12">
+            <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
+            <div class="col-8 review-design">
               <% if @event.reviews.count != 0 %>
-                <h3 class="mt-5" ><%= @event.reviews.count %> Reviews</h3>
                 <% @event.reviews.reverse.each do |review| %>
                   <ul style="list-style: none;">
                   <li class="review-card mt-3">
                     <div class="review-content mt-3">
                       <!-- Reviewer avatar -->
                       <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "review-avatar" %>
+                    </div>
+
+                    <!-- Review Rating -->
+                    <small>
                       <!-- Reviewer name -->
                       <div class="pl-2">
                         <div>
@@ -155,10 +159,7 @@
                           <%= Time.new.strftime("%B, %Y")%>
                         </div>
                       </div>
-                    </div>
-
-                    <!-- Review Rating -->
-                    <small>
+                      <!-- Review star rating -->
                       <% count = 0 %>
                       <% 5.times do %>
                         <% if review.rating > count %>
