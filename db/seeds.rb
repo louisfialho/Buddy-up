@@ -1,4 +1,4 @@
-prequire 'faker'
+require 'faker'
 require "open-uri"
 
 # This file should contain all the record creation needed to seed the database with its default values.
@@ -52,16 +52,10 @@ puts "Creating bookings..."
 # end
 
 6.times do
-booking = Booking.new(event_id: Event.all.sample.id, participant_id: User.all.sample.id)
-booking.save!
-end
-
-puts "Creating channels..."
-
-6.times do
 chatroom = Chatroom.new(name: Faker::IDNumber.valid)
 chatroom.save!
+booking = Booking.new(event_id: Event.all.sample.id, participant_id: User.all.sample.id, chatroom: chatroom)
+booking.save!
 end
-
 
 puts "Finished!"
