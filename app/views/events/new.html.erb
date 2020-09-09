@@ -16,13 +16,15 @@
                 as: :datetime,
                 required: true,
                 autofocus: true,
-                html5: true, order: %i(day month year), label: "From" %>
+                html5: true, input_html: { type: "datetime-local" }, label: "From"
+                %>
             </div>
             <div class="form-group">
               <%= f.input :end_time,
                 as: :datetime,
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                html5: true, input_html: { type: "datetime-local" }, label: "Until" %>
             </div>
             <div class="form-group">
               <%= f.input :location,
