@@ -12,13 +12,13 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @event.bookings.destroy_all
     @event.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path(tab: "organizer_space")
   end
 
   def update
     @event = Event.find(params[:id])
     @event.update(event_params)
-    redirect_to dashboard_path
+    redirect_to dashboard_path(tab: "organizer_space")
   end
 
   def create
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.organizer = @user
     @event.save
-    redirect_to dashboard_path
+    redirect_to dashboard_path(tab: "organizer_space")
   end
 
   def show
