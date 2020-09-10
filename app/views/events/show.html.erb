@@ -1,17 +1,17 @@
-<div class="show-container">
-
-<div class="info">
 <div class="show-container pt-0 pl-0">
-  <div class="btn button-back return ml-3">
-    <%= image_tag "return.svg", style:"width: 20px" %>
+  <div class="btn button-back return ml-5">
+    <%= image_tag "return.svg", style:"width: 30px" %>
   </div>
 </div>
+
+<div class="show-container">
+<div class="info">
   <div class="row">
     <div class="col-sm-6">
       <div class="mb-3" style="max-width: 50rem;">
        <div class="card-container mx-auto">
         <% if @event.organizer.photo.present? %>
-          <%= cl_image_tag @event.organizer.photo.key, class: "round" %>
+          <%= cl_image_tag @event.organizer.photo.key, class: "avatar-profile2 round" %>
         <% else %>
           <img class="round" src="https://kitt.lewagon.com/placeholder/users/ssaunier" alt="user" />
         <% end %>
@@ -19,11 +19,11 @@
         <br>
         <h4><%= @event.organizer.first_name %> <%= @event.organizer.last_name %></h4>
         <div class="profile-details">
-          <p>Gender: <%= @event.organizer.gender %></p>
-          <p>Age: <%= @event.organizer.age %></p></p>
-          <p>Main Language: <%= @event.organizer.language %></p>
-          <p>Favourite Sport: <%= @event.organizer.favorite_sport %></p>
-          <p>Skill level: <%= @event.organizer.skill_level %></p>
+          <p class="user-info">Gender: <%= @event.organizer.gender %></p>
+          <p class="user-info">Age: <%= @event.organizer.age %></p></p>
+          <p class="user-info">Main Language: <%= @event.organizer.language %></p>
+          <p class="user-info">Favourite Sport: <%= @event.organizer.favorite_sport %></p>
+          <p class="user-info">Skill level: <%= @event.organizer.skill_level %></p>
         </div>
         </div>
       </div>
@@ -60,11 +60,13 @@
               </div>
 
               <%= simple_form_for [@event, @booking] do |f| %>
-                <%= f.submit "Book event", class:"btn btn-primary btn-lg w-100", id:"book"%>
+                <%= f.submit "Book event", class:"btn btn-primary btn-lg w-100 rounded-corners", id:"book"%>
               <% end %>
 
             </div>
-            <div class="card card-participants mt-4">
+
+            <div class="event-participants">
+            <div class="card card-participants mt-4 rounded-corners">
                   <h5 class="card-title mt-3">Participants</h5>
                     <ul class="no-bullets list-group list-group-horizontal justify-content-around mb-2 mt-1" style="list-style: none;">
                       <% if @event.organizer.photo.present? %>
@@ -88,12 +90,13 @@
 
     </div>
   </div>
+</div>
 
 
   <!-- tabs for active history, biography and reviews -->
   <section class="wrapper">
-    <ul class="tabs">
-      <li class=" <%= params[:tab] == "Biography" ? "active" : "" %>">Biography</li>
+    <ul class="tabs rounded-corners">
+      <li class="active <%= params[:tab] == "Biography" ? "active" : "" %>">Biography</li>
       <li>Activity History</li>
       <li class=" <%= params[:tab] == "Reviews" ? "active" : "" %>" id="reviewclick">Reviews</li>
     </ul>
@@ -139,7 +142,7 @@
           <!-- stop undoing now when you start seeing this disappear. Keep on eye on me. LOOOKKKKK ATTT MEEEEE -->
           <!-- watch me !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
           <!-- list the reviews -->
-          <div id="reviews-list">
+          <div id="reviews-list" class=' mt-1'>
             <%= render "reviews/listing" %>
           </div>
           <!-- review end -->
