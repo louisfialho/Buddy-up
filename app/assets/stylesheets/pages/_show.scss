@@ -20,12 +20,13 @@
   padding: 30px;
   width: 350px;
   margin: 0 auto;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .form-container:hover {
     background-color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    box-shadow: 0 0 15px rgba(4,245,255,0.2);
   }
 
 .show-details {
