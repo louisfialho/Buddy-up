@@ -1,3 +1,4 @@
+              <!-- avg rating -->
               <% unless @event.reviews.count == 0 %>
                 <h3 class="spacing" ><%= @event.reviews.count %> Reviews</h3>
                 <!-- average rating -->
@@ -16,10 +17,10 @@
                   <%end%>
                 </div>
               <% end %>
-
+              <!-- reviews content -->
               <div class="col-12 review-design">
-                <% if @event.reviews.count != 0 %>
-                  <% @event.reviews.reverse.each do |review| %>
+                <% if @event.organizer.reviewee_reviews.count != 0 %>
+                  <% @event.organizer.reviewee_reviews.reverse.each do |review| %>
                     <ul style="list-style: none;">
                     <li class="review-card mt-3 mb-4 pb-4 d-flex justify-content-center">
                       <div class="review-content m-0 pl-4" style="width:20%" >
