@@ -113,8 +113,9 @@
 
 
     <div class="tab-pane fade <%= params[:tab] == "organizer_space" ? "show active" : "" %>" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-       <%= link_to "Create", new_event_path , class: "btn btn-ghost justify-content-center" %>
-
+      <div style="text-align:center;">
+       <%= link_to "Create", new_event_path , class: "btn btn-ghost mx-auto" %>
+     </div>
        <% if @my_events.empty? %>
         <p> You haven't organized any event yet </p>
        <% else %>
