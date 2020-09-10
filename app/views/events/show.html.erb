@@ -19,11 +19,11 @@
         <br>
         <h4><%= @event.organizer.first_name %> <%= @event.organizer.last_name %></h4>
         <div class="profile-details">
-          <p>Gender: <%= @event.organizer.gender %></p>
-          <p>Age: <%= @event.organizer.age %></p></p>
-          <p>Main Language: <%= @event.organizer.language %></p>
-          <p>Favourite Sport: <%= @event.organizer.favorite_sport %></p>
-          <p>Skill level: <%= @event.organizer.skill_level %></p>
+          <p class="user-info">Gender: <%= @event.organizer.gender %></p>
+          <p class="user-info">Age: <%= @event.organizer.age %></p></p>
+          <p class="user-info">Main Language: <%= @event.organizer.language %></p>
+          <p class="user-info">Favourite Sport: <%= @event.organizer.favorite_sport %></p>
+          <p class="user-info">Skill level: <%= @event.organizer.skill_level %></p>
         </div>
         </div>
       </div>
@@ -60,11 +60,13 @@
               </div>
 
               <%= simple_form_for [@event, @booking] do |f| %>
-                <%= f.submit "Book event", class:"btn btn-primary btn-lg w-100", id:"book"%>
+                <%= f.submit "Book event", class:"btn btn-primary btn-lg w-100 rounded-corners", id:"book"%>
               <% end %>
 
             </div>
-            <div class="card card-participants mt-4">
+
+            <div class="event-participants">
+            <div class="card card-participants mt-4 rounded-corners">
                   <h5 class="card-title mt-3">Participants</h5>
                     <ul class="no-bullets list-group list-group-horizontal justify-content-around mb-2 mt-1" style="list-style: none;">
                       <% if @event.organizer.photo.present? %>
@@ -88,11 +90,12 @@
 
     </div>
   </div>
+</div>
 
 
   <!-- tabs for active history, biography and reviews -->
   <section class="wrapper">
-    <ul class="tabs">
+    <ul class="tabs rounded-corners">
       <li class="active">Biography</li>
       <li>Activity History</li>
       <li>Reviews</li>
