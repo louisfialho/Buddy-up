@@ -29,11 +29,20 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import {add_participants} from './booking';
 import { eventsTabs } from '../components/events-tabs';
+import { initAutocomplete } from '../plugins/init_autocomplete';
 // import { btnBack } from '../components/return-back';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".events-index")) {
     initMapbox();
+  }
+
+  if (document.querySelector(".pages-home")) {
+    initAutocomplete();
+  }
+
+  if (document.querySelector(".events-index")) {
+    initAutocomplete();
   }
 
   if (document.querySelector(".events-show")) {

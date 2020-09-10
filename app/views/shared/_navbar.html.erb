@@ -13,7 +13,7 @@
     <% if should_i_display_the_search_bar? == true %>
       <%= simple_form_for :search, url: events_path, method: "GET", html: { class: 'form-inline' } do |f| %>
         <!-- <form class="form-inline my-2 my-lg-0"> -->
-        <%= f.input :location, label: false, input_html: {value: "" }, placeholder: "Location", class: "form-control mr-sm-2" %>
+        <%= f.input :location, label: false, input_html: {value: "", type:"search", id:"address-input" }, placeholder: "Location", class: "form-control mr-sm-2", id:"search-location" %>
         <%= f.input :sport, input_html: { class: "recognitionStyling form-control mr-sm-2" }, prompt: "Sport", class: "form-control mr-sm-2", collection: ["Tennis", "Baseball", "Soccer", "Badminton", "Rugby", "Swimming", "Running", "Volleyball"], label: false %>
         <%= f.input :participant_date, as: :date, html5: true, label: false %>
         <%= f.input :participant_time, as: :time, html5: true, label: false %>
