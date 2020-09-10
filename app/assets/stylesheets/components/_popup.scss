@@ -1,0 +1,19 @@
+.chat-submit1 {
+  margin-left: 5px;
+  padding: 5px 10px;
+  height: 40px;
+  color: #36D3FF;
+  border: 1px solid #4A4A4A;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  border-color: #36D3FF;
+  background-color: white;
+}
+
+.chat-submit1:hover {
+  opacity: 1;
+  color: white;
+  background-color: #36D3FF;
+}
