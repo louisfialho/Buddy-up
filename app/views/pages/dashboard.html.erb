@@ -4,13 +4,13 @@
 
   <ul class="nav nav-pills mb-3 d-flex justify-content-center" id="pills-tab" role="tablist">
     <li class="nav-item" role="presentation">
-      <a class="nav-link <%= params[:tab] == "my_profile" ? "show active" : "" %>" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Profile</a>
+      <a class="nav-link <%= params[:tab] == "my_profile" ? "show active" : "" %>" id="pills-home-tab" class="mx-auto" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><h5>Profile</h5></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link <%= params[:tab] == "buddy_space" ? "show active" : "" %>" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Buddy Space</a>
+      <a class="nav-link <%= params[:tab] == "buddy_space" ? "show active" : "" %>" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><h5>Buddy Space</h5></a>
     </li>
     <li class="nav-item" role="presentation">
-      <a class="nav-link <%= params[:tab] == "organizer_space" ? "show active" : "" %>" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Organizer Space</a>
+      <a class="nav-link <%= params[:tab] == "organizer_space" ? "show active" : "" %>" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><h5>Organizer Space</h5></a>
     </li>
   </ul>
   <div class="tab-content d-flex justify-content-center" id="pills-tabContent">
@@ -59,7 +59,7 @@
          <%= link_to "See Details", event_path(my_booking.event), class: "btn", id:"btn-event"%>
         </div>
         <% if my_booking.event.organizer.photo.present? %>
-          <%= cl_image_tag my_booking.event.organizer.photo.key, class: "mx-auto center" %>
+          <%= cl_image_tag my_booking.event.organizer.photo.key, class: "avatar-profile center" %>
         <% else %>
           <img class="mx-auto center" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
         <% end %>
@@ -89,7 +89,7 @@
           <div>
             <div class="title">Participants</div>
             <i class="fa fa-group"></i>
-            <div class="value">???</div>
+            <div class="value"><%= my_booking.event.bookings.count + 1%></div>
           </div>
           <div>
             <div class="title">Sport</div>
@@ -164,7 +164,7 @@
           <div>
             <div class="title">Participants</div>
             <i class="fa fa-group"></i>
-            <div class="value">???</div>
+            <div class="value"><%= my_event.bookings.count + 1 %></div>
           </div>
           <div>
             <div class="title">Sport</div>
