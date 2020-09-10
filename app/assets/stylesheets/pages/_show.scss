@@ -15,12 +15,18 @@
 
 .form-container {
   border-radius: 25px;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0px 4px rgba(0,0,0,0.2);
   background-color: white;
   padding: 30px;
   width: 350px;
   margin: 0 auto;
+  transition: 0.5s;
 }
+
+.form-container:hover {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  }
 
 .show-details {
   margin-top: 13px;
