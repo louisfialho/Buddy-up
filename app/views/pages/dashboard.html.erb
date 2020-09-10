@@ -135,7 +135,7 @@
          <%= link_to "See Details", event_path(my_event), class: "btn", id:"btn-event"%>
         </div>
         <% if my_event.organizer.photo.present? %>
-          <%= cl_image_tag my_event.organizer.photo.key, class: "mx-auto center" %>
+          <%= cl_image_tag my_event.organizer.photo.key, class: "avatar-profile center" %>
         <% else %>
           <img class="mx-auto center" src="https://kitt.lewagon.com/placeholder/users/ssaunier">
         <% end %>
