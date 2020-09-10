@@ -101,7 +101,7 @@
     </div>
     <div class="general">
       <h2><%= my_booking.event.organizer.first_name %> <%= my_booking.event.organizer.last_name %></h2>
-      <p>I just want to play some <%=my_booking.event.sport%></p>
+      <p><%= my_booking.event.organizer.description %></p>
       <p>Start time: <%= my_booking.event.start_time %></p>
       <span class="more">Mouse over the card for more info</span>
     </div>
@@ -177,7 +177,7 @@
     </div>
     <div class="general">
       <h2><%= my_event.organizer.first_name %> <%= my_event.organizer.last_name %></h2>
-      <p>I just want to play some <%=my_event.sport%></p>
+      <p><%= my_event.organizer.description %></p>
       <p>Start time: <%= my_event.start_time %></p>
       <span class="more">Mouse over the card for more info</span>
     </div>
