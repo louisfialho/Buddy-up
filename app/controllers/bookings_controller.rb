@@ -10,13 +10,13 @@ class BookingsController < ApplicationController
       @booking = Booking.new(participant_id: current_user.id, event_id: @event.id, chatroom: @chatroom)
       @booking.event = @event
       @booking.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path(tab: "buddy_space")
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to dashboard_path(tab: "buddy_space")
   end
 end
 
