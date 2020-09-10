@@ -29,6 +29,7 @@ import { initChatroomCable } from "../channels/chatroom_channel";
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import {add_participants} from './booking';
 import { eventsTabs } from '../components/events-tabs';
+// import { btnBack } from '../components/return-back';
 
 document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".events-index")) {
@@ -38,6 +39,10 @@ document.addEventListener('turbolinks:load', () => {
   if (document.querySelector(".events-show")) {
     eventsTabs();
     add_participants();
+    const btnBack = document.querySelector('.button-back');
+      btnBack.addEventListener('click', () => {
+        window.history.back();
+    });
   }
 
 
