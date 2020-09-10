@@ -1,0 +1,10 @@
+<% unless current_user == nil %>
+              <% if @event.bookings.where(participant_id: current_user.id).first.present? && (current_user.id ==   @event.bookings.where(participant_id: current_user.id).first.participant.id)  %>
+                <%= simple_form_for([@event, @review], remote: true) do |f| %>
+                  <%= f.input :rating, collection: 0..5, label: "Leave a Rating"%>
+                  <%= f.input :text, label:"Leave a Review" %>
+                  <%= f.submit class: 'btn btn-primary' %>
+                <% end %>
+              <% end %>
+            <% end %>
+
