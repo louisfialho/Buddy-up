@@ -22,7 +22,7 @@
           <%= event.sport %>
         </div>
         <div class="points center">
-         <%= link_to "Select Buddy", event_path(event), class: "btn", id:"btn-event"%>
+         <%= link_to "Select Buddy", event_path(event, tab: "Biography"), class: "btn", id:"btn-event"%>
         </div>
         <% if event.organizer.photo.present? %>
           <%= cl_image_tag event.organizer.photo.key, class: "mx-auto center" %>

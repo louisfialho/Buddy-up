@@ -7,9 +7,16 @@ class ReviewsController < ApplicationController
     # works for only organise but not participant || @event.participant_id
     @review.reviewee_id = @event.organizer_id
     if @review.save
-      redirect_to event_path(@event, anchor: "anchor")
-    else
-      render "events/show"
+       @review = Review.new
+          respond_to do |format|
+                  format.js
+                  format.html { redirect_to event_path, notice: 'Book was successfully created.' }
+              end
+          else
+              respond_to do |format|
+                  format.js
+                  format.html { render "events/show", notice: 'something went wrong' }
+          end
     end
   end
 
