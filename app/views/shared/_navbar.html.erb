@@ -56,12 +56,8 @@
               </span>
             </a>
           </li>
-          <!-- messages tab -->
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
           <!-- avatar with dropdown -->
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown ml-3">
             <% if current_user.photo.present? %>
               <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", style:"cursor: pointer;", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% end %>
