@@ -33,7 +33,36 @@
 
 .review-avatar-events-tabs {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   object-fit: cover;
+}
+
+.avatar-profile {
+  width: 110px !important;
+  height: 110px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+.avatar-profile2 {
+  width: 160px !important;
+  height: 160px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+.avatar-profile1 {
+  width: 100px !important;
+  height: 100px !important;
+  object-fit: cover !important;
+  border-radius: 50% !important;
+}
+
+#chat-avatar {
+width: 60px;
+height: 60px;
+object-fit: cover;
+margin-top: 10px;
+margin-left: 5px;
 }
