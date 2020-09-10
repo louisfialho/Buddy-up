@@ -22,12 +22,12 @@
                   <% @event.reviews.reverse.each do |review| %>
                     <ul style="list-style: none;">
                     <li class="review-card mt-3 mb-4 pb-4 d-flex justify-content-center">
-                      <div class="review-content m-0 pl-4" style="width:20%" >
+                      <div class="review-content m-0 pl-4"  >
                         <!-- Reviewer avatar -->
                         <% if review.reviewer.photo.present? %>
-                          <%= cl_image_tag review.reviewer.photo.key,  class: "review-avatar-events-tabs", width: "100%" %>
+                          <%= cl_image_tag review.reviewer.photo.key,  class: "avatar-profile" %>
                         <% else %>
-                          <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "review-avatar-events-tabs", width: "100%" %>
+                          <%= image_tag "https://kitt.lewagon.com/placeholder/users/RicardoLuisAraujo", class: "avatar-profile" %>
                         <% end %>
                       </div>
                       <div class="col-4 align-self-center">
