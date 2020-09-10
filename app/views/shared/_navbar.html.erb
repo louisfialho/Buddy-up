@@ -38,8 +38,8 @@
                     <% f_name = User.find_by(id:booking.event.organizer_id).first_name %>
                     <% l_name = User.find_by(id:booking.event.organizer_id).last_name %>
                     <%= link_to "Review #{f_name} #{l_name} (#{booking.event.sport})", event_path(booking.event), class: "dropdown-item" %>
+                    <% sum += 1 %>
                   <% end %>
-                <% sum += 1 %>
                 <% end %>
               <% end %>
             </div>
