@@ -1,10 +1,10 @@
               <!-- avg rating -->
-              <% unless @event.reviews.count == 0 %>
-                <h3 class="spacing" ><%= @event.reviews.count %> Reviews</h3>
+              <% unless @event.organizer.reviewee_reviews.count == 0 %>
+                <h3 class="spacing" ><%= @event.organizer.reviewee_reviews.count %> Reviews</h3>
                 <!-- average rating -->
                 <% sum = 0 %>
-                <% total_reviews = @event.reviews.count %>
-                <% @event.reviews.each do |review| %>
+                <% total_reviews = @event.organizer.reviewee_reviews.count %>
+                <% @event.organizer.reviewee_reviews.each do |review| %>
                   <% sum += review.rating %>
                 <% end %>
                 <% avg = (sum / total_reviews) %>
